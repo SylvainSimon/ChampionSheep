@@ -1,0 +1,8 @@
+doctrine:
+    database_driver:        pdo_pgsql
+    database_name:          championsheep
+    database_host:          localhost
+    database_port:          3306
+    database_user:          root
+    database_password:      
+    database_charset:       UTF8

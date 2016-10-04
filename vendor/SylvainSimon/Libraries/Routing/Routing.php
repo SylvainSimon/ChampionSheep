@@ -6,9 +6,10 @@ use \Symfony\Component\Routing\RequestContext;
 use \Symfony\Component\Routing\Loader\YamlFileLoader;
 use \Symfony\Component\Config\FileLocator;
 use \Symfony\Component\Routing\Router;
-use \Sylvanus\Http\Request;
 use \Symfony\Component\HttpKernel\Controller\ControllerResolver;
+
 use Sylvanus\FileSystem\FileSystem;
+use Sylvanus\Http\Request\Request;
 
 class Routing {
 

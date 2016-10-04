@@ -1,12 +1,18 @@
 <?php
 
-namespace Sylvanus\Request;
+namespace Sylvanus\Http\Request;
 
 use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
-use Sylvanus\Http\RequestBag;
 
-class Request extends RequestBag {
+class Request {
 
+    const BAG_GET = 1;
+    const BAG_POST = 2;
+    const BAG_HEADER = 3;
+    const BAG_SERVER = 4;
+    const BAG_COOKIE = 5;
+    const BAG_FILE = 6;
+    
     /** @var HttpFoundationRequest */
     public static $request = null;
 
@@ -16,7 +22,7 @@ class Request extends RequestBag {
      */
     public static function createFromGlobals() {
         if (self::$request === null) {
-            self::$request = HttpFoundationRequest::createFromGlobals();
+            self::$request = HttpFoundationself::createFromGlobals();
         }
         return self::$request;
     }
@@ -46,22 +52,22 @@ class Request extends RequestBag {
         $value = $default;
 
         switch ($bag) {
-            case RequestBag::BAG_GET:
+            case self::BAG_GET:
                 $value = self::$request->query->get($key);
                 break;
-            case RequestBag::BAG_POST:
+            case self::BAG_POST:
                 $value = self::$request->request->get($key);
                 break;
-            case RequestBag::BAG_COOKIE:
+            case self::BAG_COOKIE:
                 $value = self::$request->cookies->get($key);
                 break;
-            case RequestBag::BAG_FILE:
+            case self::BAG_FILE:
                 $value = self::$request->files->get($key);
                 break;
-            case RequestBag::BAG_HEADER:
+            case self::BAG_HEADER:
                 $value = self::$request->headers->get($key);
                 break;
-            case RequestBag::BAG_SERVER:
+            case self::BAG_SERVER:
                 $value = self::$request->server->get($key);
                 break;
         }
@@ -70,27 +76,27 @@ class Request extends RequestBag {
     }
     
     public static function getQuery($key, $default = null) {
-        return self::getFromRequest($key, Request::BAG_GET, $default);
+        return self::getFromRequest($key, self::BAG_GET, $default);
     }
 
     public static function getHeaders($key, $default = null) {
-        return self::getFromRequest($key, Request::BAG_HEADER, $default);
+        return self::getFromRequest($key, self::BAG_HEADER, $default);
     }
 
     public static function getPost($key, $default = null) {
-        return self::getFromRequest($key, Request::BAG_POST, $default);
+        return self::getFromRequest($key, self::BAG_POST, $default);
     }
 
     public static function getCookie($key, $default = null) {
-        return self::getFromRequest($key, Request::BAG_COOKIE, $default);
+        return self::getFromRequest($key, self::BAG_COOKIE, $default);
     }
 
     public static function getServer($key, $default = null) {
-        return self::getFromRequest($key, Request::BAG_SERVER, $default);
+        return self::getFromRequest($key, self::BAG_SERVER, $default);
     }
 
     public static function getFile($key, $default = null) {
-        return self::getFromRequest($key, Request::BAG_FILE, $default);
+        return self::getFromRequest($key, self::BAG_FILE, $default);
     }
 
     public static function getContent() {
@@ -102,47 +108,47 @@ class Request extends RequestBag {
      * @param string $bag
      * @return type
      */
-    public static function getAllFromRequest($bag = RequestBag::BAG_POST) {
+    public static function getAllFromRequest($bag = self::BAG_POST) {
         self::fillInstance();
 
         switch ($bag) {
-            case RequestBag::BAG_GET:
+            case self::BAG_GET:
                 return self::$request->query->all();
-            case RequestBag::BAG_POST:
+            case self::BAG_POST:
                 return self::$request->request->all();
-            case RequestBag::BAG_COOKIE:
+            case self::BAG_COOKIE:
                 return self::$request->cookies->all();
-            case RequestBag::BAG_FILE:
+            case self::BAG_FILE:
                 return self::$request->files->all();
-            case RequestBag::BAG_HEADER:
+            case self::BAG_HEADER:
                 return self::$request->headers->all();
-            case RequestBag::BAG_SERVER:
+            case self::BAG_SERVER:
                 return self::$request->server->all();
         }
     }
     
     public static function getAllQuery() {
-        return self::getAllFromRequest(Request::BAG_GET);
+        return self::getAllFromRequest(self::BAG_GET);
     }
 
     public static function getAllHeaders() {
-        return self::getAllFromRequest(Request::BAG_HEADER);
+        return self::getAllFromRequest(self::BAG_HEADER);
     }
 
     public static function getAllPost() {
-        return self::getAllFromRequest(Request::BAG_POST);
+        return self::getAllFromRequest(self::BAG_POST);
     }
 
     public static function getAllCookie() {
-        return self::getAllFromRequest(Request::BAG_COOKIE);
+        return self::getAllFromRequest(self::BAG_COOKIE);
     }
 
     public static function getAllFile() {
-        return self::getAllFromRequest(Request::BAG_FILE);
+        return self::getAllFromRequest(self::BAG_FILE);
     }
 
     public static function getAllServer() {
-        return self::getAllFromRequest(Request::BAG_SERVER);
+        return self::getAllFromRequest(self::BAG_SERVER);
     }
 
     /**

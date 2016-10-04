@@ -1762,18 +1762,95 @@
         ]
     },
     {
+        "name": "symfony/routing",
+        "version": "v3.1.5",
+        "version_normalized": "3.1.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/routing.git",
+            "reference": "8edf62498a1a4c57ba317664a4b698339c10cdf6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/routing/zipball/8edf62498a1a4c57ba317664a4b698339c10cdf6",
+            "reference": "8edf62498a1a4c57ba317664a4b698339c10cdf6",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.9"
+        },
+        "conflict": {
+            "symfony/config": "<2.8"
+        },
+        "require-dev": {
+            "doctrine/annotations": "~1.0",
+            "doctrine/common": "~2.2",
+            "psr/log": "~1.0",
+            "symfony/config": "~2.8|~3.0",
+            "symfony/expression-language": "~2.8|~3.0",
+            "symfony/http-foundation": "~2.8|~3.0",
+            "symfony/yaml": "~2.8|~3.0"
+        },
+        "suggest": {
+            "doctrine/annotations": "For using the annotation loader",
+            "symfony/config": "For using the all-in-one router or any loader",
+            "symfony/dependency-injection": "For loading routes from a service",
+            "symfony/expression-language": "For using expression matching",
+            "symfony/http-foundation": "For using a Symfony Request object",
+            "symfony/yaml": "For using the YAML loader"
+        },
+        "time": "2016-08-16 14:58:24",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Routing\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Routing Component",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "router",
+            "routing",
+            "uri",
+            "url"
+        ]
+    },
+    {
         "name": "SylvainSimon/Libraries",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/SylvainSimon/Libraries.git",
-            "reference": "4fbc86e4d59fa0076e30efe003270ef24c89eaa5"
+            "reference": "574eb1f01b353812f6c06f83ad964d0adead8ebe"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/SylvainSimon/Libraries/zipball/4fbc86e4d59fa0076e30efe003270ef24c89eaa5",
-            "reference": "4fbc86e4d59fa0076e30efe003270ef24c89eaa5",
+            "url": "https://api.github.com/repos/SylvainSimon/Libraries/zipball/574eb1f01b353812f6c06f83ad964d0adead8ebe",
+            "reference": "574eb1f01b353812f6c06f83ad964d0adead8ebe",
             "shasum": ""
         },
         "require": {
@@ -1790,10 +1867,11 @@
             "symfony/finder": "3.1.*",
             "symfony/http-foundation": "3.1.*",
             "symfony/http-kernel": "3.1.*",
+            "symfony/routing": "3.1.*",
             "symfony/yaml": "3.1.*",
             "ua-parser/uap-php": "3.4.*"
         },
-        "time": "2016-10-04 12:14:44",
+        "time": "2016-10-04 12:41:34",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
