@@ -1,5 +1,5 @@
-doctrine:
-    database_driver:        pdo_pgsql
+default_connection:
+    database_driver:        pdo_mysql
     database_name:          championsheep
     database_host:          localhost
     database_port:          3306

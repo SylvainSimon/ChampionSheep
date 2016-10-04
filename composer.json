@@ -3,7 +3,7 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "": ["src", "library/common"]
+            "": ["src", "library/Common", "src/CoreBundle/Controllers"]
         }
     },
     "config": {
@@ -25,6 +25,11 @@
         "php": "~5.6",
         "monolog/monolog": "1.21.*",
         "SylvainSimon/Libraries": "dev-master",
-        "robloach/component-installer": "0.2.*"
+        "robloach/component-installer": "0.2.*",
+        "components/normalize.css": "3.0.*",
+        "components/bootstrap": "3.3.*",
+        "components/jquery": "3.1.*",
+        "components/jqueryui": "1.12.*",
+        "almasaeed2010/adminlte": "2.3.*"
     }
 }

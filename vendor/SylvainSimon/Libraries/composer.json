@@ -16,6 +16,7 @@
         "doctrine/orm": "2.5.*",
         "doctrine/common": "2.6.*",
         "doctrine/migrations": "1.4.*",
+        "twig/twig": "1.26.*",
         "justinrainbow/json-schema": "2.0.*",
         "swiftmailer/swiftmailer": "5.4.*",
         "ua-parser/uap-php": "3.4.*"
@@ -28,7 +29,18 @@
     ],
     "autoload": {
         "psr-4": {
-            "Sylvanus\\": ""
+            "Sylvanus\\Config\\": "Config",
+            "Sylvanus\\Encryption\\": "Encryption",
+            "Sylvanus\\FileSystem\\": "FileSystem",
+            "Sylvanus\\Logger\\": "Logger",
+            "Sylvanus\\Mail\\": "Mail",
+            "Sylvanus\\ORM\\Doctrine\\": "ORM/Doctrine",
+            "Sylvanus\\Parser\\": "Parser",
+            "Sylvanus\\Request\\": "Request",
+            "Sylvanus\\Response\\": "Response",
+            "Sylvanus\\Routing\\": "Routing",
+            "Sylvanus\\Twig\\": "Templating",
+            "Sylvanus\\Validator\\": "Validator"
         }
     }
 }
