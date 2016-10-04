@@ -18,8 +18,7 @@
     ],
     "http-basic": {
         "github.com": {
-            "username": "SylvainSimon",
-            "password": "9852136547ss"
+            "username": "SylvainSimon"
         }
     },
     "require": {
