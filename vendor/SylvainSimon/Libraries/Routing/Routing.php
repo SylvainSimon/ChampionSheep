@@ -9,7 +9,7 @@ use \Symfony\Component\Routing\Router;
 use \Symfony\Component\HttpKernel\Controller\ControllerResolver;
 
 use Sylvanus\FileSystem\FileSystem;
-use Sylvanus\Http\Request\Request;
+use Sylvanus\Request\Request;
 
 class Routing {
 

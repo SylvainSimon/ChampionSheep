@@ -3,7 +3,7 @@
 namespace Sylvanus\Mail;
 
 use Sylvanus\FileSystem\FileSystem;
-use Sylvanus\Http\Request\Request;
+use Sylvanus\Request\Request;
 
 class MailMessage {
 

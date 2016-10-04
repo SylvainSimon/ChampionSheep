@@ -5,8 +5,7 @@ namespace Sylvanus\Response;
 use Symfony\Component\HttpFoundation\Response as HttpFoundationResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Sylvanus\Http\Request;
-use Sylvanus\Http\RequestBag;
+use Sylvanus\Request\Request;
 
 class Response {
 

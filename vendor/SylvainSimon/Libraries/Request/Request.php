@@ -1,6 +1,6 @@
 <?php
 
-namespace Sylvanus\Http\Request;
+namespace Sylvanus\Request;
 
 use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
 
@@ -22,7 +22,7 @@ class Request {
      */
     public static function createFromGlobals() {
         if (self::$request === null) {
-            self::$request = HttpFoundationself::createFromGlobals();
+            self::$request = HttpFoundationRequest::createFromGlobals();
         }
         return self::$request;
     }

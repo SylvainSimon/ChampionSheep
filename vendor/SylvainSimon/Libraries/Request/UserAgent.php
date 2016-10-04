@@ -4,7 +4,7 @@ namespace Sylvanus\Request;
 
 use UAParser\Parser;
 use UAParser\Result\Client;
-use Sylvanus\Http\Request;
+use Sylvanus\Request\Request;
 
 class UserAgent {
 

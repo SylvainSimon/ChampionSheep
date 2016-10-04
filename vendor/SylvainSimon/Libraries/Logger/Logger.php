@@ -5,8 +5,9 @@ namespace Sylvanus\Logger;
 use \Monolog\Logger AS MonologLogger;
 use \Monolog\Handler\StreamHandler;
 use \Monolog\Formatter\LineFormatter;
+
 use \Sylvanus\FileSystem\FileSystem;
-use \Sylvanus\Http\Request;
+use Sylvanus\Request\Request;
 
 class Logger {
 

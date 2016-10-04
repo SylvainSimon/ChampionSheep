@@ -1845,12 +1845,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/SylvainSimon/Libraries.git",
-            "reference": "574eb1f01b353812f6c06f83ad964d0adead8ebe"
+            "reference": "a493233771ecb9a01a5ce41c356f45b4be96ae75"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/SylvainSimon/Libraries/zipball/574eb1f01b353812f6c06f83ad964d0adead8ebe",
-            "reference": "574eb1f01b353812f6c06f83ad964d0adead8ebe",
+            "url": "https://api.github.com/repos/SylvainSimon/Libraries/zipball/a493233771ecb9a01a5ce41c356f45b4be96ae75",
+            "reference": "a493233771ecb9a01a5ce41c356f45b4be96ae75",
             "shasum": ""
         },
         "require": {
@@ -1871,7 +1871,7 @@
             "symfony/yaml": "3.1.*",
             "ua-parser/uap-php": "3.4.*"
         },
-        "time": "2016-10-04 12:41:34",
+        "time": "2016-10-04 13:11:19",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
