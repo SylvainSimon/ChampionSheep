@@ -1,0 +1,33 @@
+{
+    "name": "SylvainSimon/Libraries",
+    "type": "library",
+    "description": "Sylvanus Component",
+    "require": {
+        "php": ">=5.4.12",
+        "symfony/http-foundation": "3.1.*",
+        "symfony/http-kernel": "3.1.*",
+        "symfony/config": "3.1.*",
+        "symfony/yaml": "3.1.*",
+        "symfony/filesystem": "3.1.*",
+        "symfony/finder": "3.1.*",
+        "symfony/console": "3.1.*",
+        "doctrine/cache": "1.6.*",
+        "doctrine/orm": "2.5.*",
+        "doctrine/common": "2.6.*",
+        "doctrine/migrations": "1.4.*",
+        "justinrainbow/json-schema": "2.0.*",
+        "swiftmailer/swiftmailer": "5.4.*",
+        "ua-parser/uap-php": "3.4.*"
+    },
+    "authors": [
+        {
+            "name": "Simon Sylvain",
+            "email": "sylvain.simon@live.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sylvanus\\": ""
+        }
+    }
+}

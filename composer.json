@@ -1,0 +1,26 @@
+{
+    "name": "SylvainSimon/ChampionSheep",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "": ["src", "library/common"]
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/SylvainSimon/Libraries"
+        }
+    ],
+    "http-basic": {
+        "github.com": {
+            "username": "SylvainSimon",
+            "password": "9852136547ss"
+        }
+    },
+    "require": {
+        "php": "~5.6",
+        "monolog/monolog": "1.21.*",
+		"SylvainSimon/Libraries":  "dev-master"
+    }
+}
