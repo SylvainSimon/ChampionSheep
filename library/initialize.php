@@ -3,7 +3,7 @@
 define('ROOT', dirname(__DIR__));
 $autoload = require_once ROOT . '/vendor/autoload.php';
 
-define("PATH_COMPONENTS", ROOT . "/app/resources/public/components");
+define("PATH_COMPONENTS", ROOT . "/web/public/components");
 define("PATH_CACHE_TWIG", ROOT . "/app/cache/twig");
 
 //Register custom exceptions handlers
