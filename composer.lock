@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SylvainSimon/Libraries.git",
-                "reference": "1f1e7e30fcf2f44e69fbeb596557cd48627a15e4"
+                "reference": "8df48e9c1a4206e52d2327fbadc50bf47d5ad585"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SylvainSimon/Libraries/zipball/1f1e7e30fcf2f44e69fbeb596557cd48627a15e4",
-                "reference": "1f1e7e30fcf2f44e69fbeb596557cd48627a15e4",
+                "url": "https://api.github.com/repos/SylvainSimon/Libraries/zipball/8df48e9c1a4206e52d2327fbadc50bf47d5ad585",
+                "reference": "8df48e9c1a4206e52d2327fbadc50bf47d5ad585",
                 "shasum": ""
             },
             "require": {
@@ -72,7 +72,7 @@
                 "source": "https://github.com/SylvainSimon/Libraries/tree/master",
                 "issues": "https://github.com/SylvainSimon/Libraries/issues"
             },
-            "time": "2016-10-09 15:14:08"
+            "time": "2016-10-09 17:52:38"
         },
         {
             "name": "almasaeed2010/adminlte",

@@ -6,6 +6,7 @@ use \Symfony\Component\Routing\RequestContext;
 use \Symfony\Component\Routing\Loader\YamlFileLoader;
 use \Symfony\Component\Config\FileLocator;
 use \Symfony\Component\Routing\Router;
+use \Symfony\Component\Routing\Generator\UrlGenerator;
 use \Symfony\Component\HttpKernel\Controller\ControllerResolver;
 use Sylvanus\FileSystem\FileSystem;
 use Sylvanus\Request\Request;
@@ -17,6 +18,7 @@ class Routing {
     public static $collection = null;
     public static $requestContext = null;
     public static $router = null;
+    public static $urlGenerator = null;
 
     /**
      * Add a YAML routing file to ressource array
@@ -51,7 +53,8 @@ class Routing {
         $requestContext = new RequestContext();
         $requestContext->fromRequest(Request::fillInstance());
         self::$requestContext = $requestContext;
-        
+        self::$urlGenerator = new UrlGenerator($collection, $requestContext);
+
         self::$router = new Router($loader, self::$ressource, self::$options, $requestContext);
     }
 

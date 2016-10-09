@@ -16,7 +16,6 @@
 
         <link href="/public/css/AdminLTE.css" rel="stylesheet" type="text/css" />
         <link href="/public/css/styles.css" rel="stylesheet" type="text/css" />
-
     </head>
 
     <body class="skin-red sidebar-mini">
@@ -24,7 +23,7 @@
 
             <header class="main-header">
 
-                <a href="index2.html" class="logo">
+                <a href="{{ path("home") }}" class="logo">
                     <span class="logo-mini"><b>C</b>SH</span>
                     <span class="logo-lg"><b>Champion</b>Sheep</span>
                 </a>
@@ -106,7 +105,7 @@
                     </form>
 
                     {{ controller('CoreBundle\\Controllers\\SidebarMenuController', 'generateAction', {}) }}
-                    
+
                 </section>
             </aside>
 
@@ -128,11 +127,7 @@
                 </section>
             </div>
 
-            <footer class="main-footer">
-                <div class="pull-right hidden-xs">
-                </div>
-                <strong>Copyright © 2016 <a href="#">ChampionSheep</a>.</strong> Tous droits réservés.
-            </footer>
+            {% include 'footer.html.twig' %}        
         </div>
 
         <script src="/public/components/jquery/jquery.min.js"></script>
