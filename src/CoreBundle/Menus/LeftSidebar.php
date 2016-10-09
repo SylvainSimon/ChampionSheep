@@ -16,7 +16,15 @@ class LeftSidebar {
         $factory->addExtension(new \Knp\Menu\Integration\Symfony\RoutingExtension($urlGenerator));
 
         $menu = $factory->createItem("root");
-        $menu->addChild('Accueil', ["route" => "home2"]);
+        $menu->addChild('Accueil', ["route" => "home"]);
+        
+        $nodeAvecDesTrucs = $menu->addChild("AccueilAvecDesTruc", ["route" => "home"]);
+        $nodeAvecDesTrucs->addChild('Historique des rendez-vous', ["route" => "home"]);
+        
+        $menu->addChild('AccueilSeulEnPlus', ["route" => "home"]);
+
+        
+        $menu->addChild('Accueil', ["route" => "home"]);
 
         $menuRenderer = new TwigRenderer(\TwigHelper::$environnement, 'left_sidebar_menu.html.twig', new Matcher());
         return $menuRenderer->render($menu);

@@ -1,15 +1,40 @@
-
-
 {% if item|length > 0 %}
     <ul class="sidebar-menu">
-        <li class="header">Menu</li>
+        <li class="header">
+            Menu
+        </li>
+        {% import _self as macros %}
+        {{ macros.menu_links(item) }}
+    </ul>
+{% endif %}
 
-        {% for currentItem in item %}
+
+{% macro menu_links(item) %}
+    
+    {% import _self as macros %}
+
+    {% for currentItem in item %}
+        
+        {% if currentItem.children|length > 0 %}
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-link"></i> <span>{{ currentItem.name }}</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    {{ macros.menu_links(currentItem.children) }}
+                </ul>
+            </li>
+        {% else %}
             <li>
                 <a href="{{ currentItem.uri }}">
                     {{ currentItem.name }}
                 </a>
             </li>
-        {% endfor %}
-    </ul>
-{% endif %}
+        {% endif %}
+        
+    {% endfor %}
+    
+{% endmacro %}
