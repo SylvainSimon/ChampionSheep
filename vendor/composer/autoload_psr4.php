@@ -11,6 +11,7 @@ return array(
     'UAParser\\' => array($vendorDir . '/ua-parser/uap-php/src'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
+    'Symfony\\Component\\Templating\\' => array($vendorDir . '/symfony/templating'),
     'Symfony\\Component\\Routing\\' => array($vendorDir . '/symfony/routing'),
     'Symfony\\Component\\Process\\' => array($vendorDir . '/symfony/process'),
     'Symfony\\Component\\HttpKernel\\' => array($vendorDir . '/symfony/http-kernel'),
@@ -42,6 +43,7 @@ return array(
     'Doctrine\\DBAL\\Migrations\\' => array($vendorDir . '/doctrine/migrations/lib/Doctrine/DBAL/Migrations'),
     'Doctrine\\Common\\Cache\\' => array($vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache'),
     'Doctrine\\Common\\' => array($vendorDir . '/doctrine/common/lib/Doctrine/Common'),
+    'CoreBundle\\TwigExtension\\' => array($baseDir . '/src/CoreBundle/TwigExtension'),
     'CoreBundle\\Controllers\\' => array($baseDir . '/src/CoreBundle/Controllers'),
     '' => array($baseDir . '/src', $baseDir . '/library/Common'),
 );

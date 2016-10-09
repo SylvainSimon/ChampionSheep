@@ -8,7 +8,7 @@ class DefaultController{
     
     public function indexAction(){
                
-        $template = \TwigHelper::render("base.html.twig", ["menu" => LeftSidebar::generate()]);
+        $template = \TwigHelper::render("home.html.twig", ["menu" => LeftSidebar::generate()]);
         echo $template;
     }
 }

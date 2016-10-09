@@ -29,6 +29,10 @@ class Twig {
         
     }
     
+    public static function addGlobal($name, $value) {
+        self::$environnement->addGlobal($name, $value);  
+    }
+    
     public static function addTwigExtension($instance) {
         self::$environnement->addExtension($instance);  
     }

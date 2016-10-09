@@ -37,3 +37,5 @@ TwigHelper::registerTemplates([ROOT . "/src/CoreBundle/Resources/views"]);
 TwigHelper::registerTemplates([ROOT . "/src/CoreBundle/Resources/views/menus"]);
 TwigHelper::createEnvironnement(ROOT . "/app/cache/twig", true);
 TwigHelper::addTwigExtension(new Twig_Extension_Debug());
+TwigHelper::addTwigExtension(new \CoreBundle\TwigExtension\ControllerFunctionExtension());
+TwigHelper::addGlobal("environnement", TwigHelper::$environnement);

@@ -4,7 +4,8 @@
     "autoload": {
         "psr-4": {
             "": ["src", "library/Common"],
-            "CoreBundle\\Controllers\\": "src/CoreBundle/Controllers"
+            "CoreBundle\\Controllers\\": "src/CoreBundle/Controllers",
+            "CoreBundle\\TwigExtension\\": "src/CoreBundle/TwigExtension"
         }
     },
     "config": {

@@ -80,6 +80,10 @@ class Routing {
         $controller = $controllerResolver->getController(Request::fillInstance());
         $arguments = $controllerResolver->getArguments(Request::fillInstance(), $controller);
 
+        self::runDirectly($controller, $arguments);
+    }
+
+    public static function runDirectly($controller, $arguments) {
         call_user_func_array($controller, $arguments);
     }
 
