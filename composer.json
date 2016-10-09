@@ -8,8 +8,8 @@
         }
     },
     "config": {
-        "component-dir": "app/resources/public/components",
-        "component-baseurl": "/app/resources/public/components"
+        "component-dir": "web/public/components",
+        "component-baseurl": "web/public/components"
     },
     "repositories": [
         {

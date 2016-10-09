@@ -29,6 +29,10 @@ class Twig {
         
     }
     
+    public static function addTwigExtension($instance) {
+        self::$environnement->addExtension($instance);  
+    }
+    
     public static function addTwigExtensions() {
         self::$environnement->addExtension(new \Twig_Extensions_Extension_Text());
         self::$environnement->addExtension(new \Twig_Extensions_Extension_I18n());

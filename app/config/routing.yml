@@ -3,3 +3,9 @@ home:
     defaults:  
         _controller: CoreBundle\Controllers\DefaultController::indexAction
     methods:  [GET]
+    
+home2:
+    path:     /jaimelepenis
+    defaults:  
+        _controller: CoreBundle\Controllers\DefaultController::indexAction
+    methods:  [GET]

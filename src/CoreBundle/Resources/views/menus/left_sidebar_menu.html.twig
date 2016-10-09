@@ -1,0 +1,15 @@
+
+
+{% if item|length > 0 %}
+    <ul class="sidebar-menu">
+        <li class="header">Menu</li>
+
+        {% for currentItem in item %}
+            <li>
+                <a href="{{ currentItem.uri }}">
+                    {{ currentItem.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

@@ -17,6 +17,8 @@
         "doctrine/common": "2.6.*",
         "doctrine/migrations": "1.4.*",
         "twig/twig": "1.26.*",
+        "twig/extensions": "1.4.*",
+        "knplabs/knp-menu" : "2.2.*",
         "justinrainbow/json-schema": "2.0.*",
         "swiftmailer/swiftmailer": "5.4.*",
         "ua-parser/uap-php": "3.4.*"
@@ -39,6 +41,7 @@
             "Sylvanus\\Request\\": "Request",
             "Sylvanus\\Response\\": "Response",
             "Sylvanus\\Routing\\": "Routing",
+            "Sylvanus\\Session\\": "Session",
             "Sylvanus\\Twig\\": "Templating",
             "Sylvanus\\Validator\\": "Validator"
         }

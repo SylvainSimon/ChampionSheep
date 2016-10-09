@@ -10,6 +10,8 @@ define("PATH_CACHE_TWIG", ROOT . "/app/cache/twig");
 error_reporting(E_ERROR | E_PARSE);
 ExceptionHelper::registerHandlers();
 
+SessionHelper::init();
+
 //Initilialize logger
 LogHelper::setLogPath(ROOT . "/app/log/");
 
@@ -32,4 +34,6 @@ RoutingHelper::createRouter();
 TwigHelper::createLoader();
 TwigHelper::registerTemplates([ROOT . "/app/resources/views"]);
 TwigHelper::registerTemplates([ROOT . "/src/CoreBundle/Resources/views"]);
+TwigHelper::registerTemplates([ROOT . "/src/CoreBundle/Resources/views/menus"]);
 TwigHelper::createEnvironnement(ROOT . "/app/cache/twig", true);
+TwigHelper::addTwigExtensions();

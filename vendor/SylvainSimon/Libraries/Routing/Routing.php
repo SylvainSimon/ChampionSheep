@@ -7,7 +7,6 @@ use \Symfony\Component\Routing\Loader\YamlFileLoader;
 use \Symfony\Component\Config\FileLocator;
 use \Symfony\Component\Routing\Router;
 use \Symfony\Component\HttpKernel\Controller\ControllerResolver;
-
 use Sylvanus\FileSystem\FileSystem;
 use Sylvanus\Request\Request;
 
@@ -15,6 +14,8 @@ class Routing {
 
     public static $ressource = [];
     public static $options = [];
+    public static $collection = null;
+    public static $requestContext = null;
     public static $router = null;
 
     /**
@@ -42,12 +43,20 @@ class Routing {
     public static function createRouter() {
 
         $locator = new FileLocator([ROOT]);
+        
         $loader = new YamlFileLoader($locator);
+        $collection = $loader->load(self::$ressource);
+        self::$collection = $collection;
 
         $requestContext = new RequestContext();
         $requestContext->fromRequest(Request::fillInstance());
-
+        self::$requestContext = $requestContext;
+        
         self::$router = new Router($loader, self::$ressource, self::$options, $requestContext);
+    }
+
+    public static function getRouteCollection() {
+        return self::$collection;
     }
 
     /**

@@ -26,7 +26,7 @@ var components = {
             "exports": "jQuery"
         }
     },
-    "baseUrl": "/app/resources/public/components"
+    "baseUrl": "web/public/components"
 };
 if (typeof require !== "undefined" && require.config) {
     require.config(components);

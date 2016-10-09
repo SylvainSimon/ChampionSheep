@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "20b3f9df9ae49dac84c370b25bac4fb4",
+    "hash": "0a613ea232969304deba78ef12902522",
     "content-hash": "17ad35a4367c5308748766c0908de365",
     "packages": [
         {
@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SylvainSimon/Libraries.git",
-                "reference": "07f95b3c81c440a54d10e8681ecca70573d87c1a"
+                "reference": "d0c0581a470598fb941818f8fbbd2b84a3fde723"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SylvainSimon/Libraries/zipball/07f95b3c81c440a54d10e8681ecca70573d87c1a",
-                "reference": "07f95b3c81c440a54d10e8681ecca70573d87c1a",
+                "url": "https://api.github.com/repos/SylvainSimon/Libraries/zipball/d0c0581a470598fb941818f8fbbd2b84a3fde723",
+                "reference": "d0c0581a470598fb941818f8fbbd2b84a3fde723",
                 "shasum": ""
             },
             "require": {
@@ -27,6 +27,7 @@
                 "doctrine/migrations": "1.4.*",
                 "doctrine/orm": "2.5.*",
                 "justinrainbow/json-schema": "2.0.*",
+                "knplabs/knp-menu": "2.2.*",
                 "php": ">=5.4.12",
                 "swiftmailer/swiftmailer": "5.4.*",
                 "symfony/config": "3.1.*",
@@ -37,6 +38,7 @@
                 "symfony/http-kernel": "3.1.*",
                 "symfony/routing": "3.1.*",
                 "symfony/yaml": "3.1.*",
+                "twig/extensions": "1.4.*",
                 "twig/twig": "1.26.*",
                 "ua-parser/uap-php": "3.4.*"
             },
@@ -53,6 +55,7 @@
                     "Sylvanus\\Request\\": "Request",
                     "Sylvanus\\Response\\": "Response",
                     "Sylvanus\\Routing\\": "Routing",
+                    "Sylvanus\\Session\\": "Session",
                     "Sylvanus\\Twig\\": "Templating",
                     "Sylvanus\\Validator\\": "Validator"
                 }
@@ -68,7 +71,7 @@
                 "source": "https://github.com/SylvainSimon/Libraries/tree/master",
                 "issues": "https://github.com/SylvainSimon/Libraries/issues"
             },
-            "time": "2016-10-04 21:51:04"
+            "time": "2016-10-09 12:36:10"
         },
         {
             "name": "almasaeed2010/adminlte",
@@ -1071,6 +1074,72 @@
                 "schema"
             ],
             "time": "2016-06-02 10:59:52"
+        },
+        {
+            "name": "knplabs/knp-menu",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/KnpMenu.git",
+                "reference": "964b5b3ca7fd23019147991f4f75f361d061eb20"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/KnpMenu/zipball/964b5b3ca7fd23019147991f4f75f361d061eb20",
+                "reference": "964b5b3ca7fd23019147991f4f75f361d061eb20",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "pimple/pimple": "~1.0",
+                "silex/silex": "~1.0",
+                "symfony/phpunit-bridge": "~2.7|~3.0",
+                "symfony/routing": "~2.3|~3.0",
+                "twig/twig": "~1.16|~2.0"
+            },
+            "suggest": {
+                "pimple/pimple": "for the built-in implementations of the menu provider and renderer provider",
+                "silex/silex": "for the integration with your silex application",
+                "twig/twig": "for the TwigRenderer and the integration with your templates"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Knp\\Menu\\": "src/Knp/Menu"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christophe Coevoet",
+                    "email": "stof@notk.org"
+                },
+                {
+                    "name": "KnpLabs",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://github.com/KnpLabs/KnpMenu/contributors"
+                }
+            ],
+            "description": "An object oriented menu library",
+            "homepage": "http://knplabs.com",
+            "keywords": [
+                "menu",
+                "tree"
+            ],
+            "time": "2016-09-22 07:36:19"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -2133,6 +2202,58 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2016-09-25 08:27:07"
+        },
+        {
+            "name": "twig/extensions",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig-extensions.git",
+                "reference": "531eaf4b9ab778b1d7cdd10d40fc6aa74729dfee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig-extensions/zipball/531eaf4b9ab778b1d7cdd10d40fc6aa74729dfee",
+                "reference": "531eaf4b9ab778b1d7cdd10d40fc6aa74729dfee",
+                "shasum": ""
+            },
+            "require": {
+                "twig/twig": "~1.20|~2.0"
+            },
+            "require-dev": {
+                "symfony/translation": "~2.3"
+            },
+            "suggest": {
+                "symfony/translation": "Allow the time_diff output to be translated"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_Extensions_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Common additional features for Twig that do not directly belong in core",
+            "homepage": "http://twig.sensiolabs.org/doc/extensions/index.html",
+            "keywords": [
+                "i18n",
+                "text"
+            ],
+            "time": "2016-09-22 16:50:57"
         },
         {
             "name": "twig/twig",

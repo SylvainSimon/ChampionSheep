@@ -10,10 +10,10 @@
 
         <link href="/public/components/normalize-css/normalize.css" rel="stylesheet" type="text/css" />
         <link href="/public/css/Bootstrap.css" rel="stylesheet" type="text/css" />
-        
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-        
+
         <link href="/public/css/AdminLTE.css" rel="stylesheet" type="text/css" />
         <link href="/public/css/styles.css" rel="stylesheet" type="text/css" />
 
@@ -45,7 +45,7 @@
                                     <span class="hidden-xs">Sylvain Simon</span>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    
+
                                     <li class="user-header">
                                         <img src="/public/img/user-160x160.jpg" class="img-circle">
                                         <p>
@@ -65,7 +65,7 @@
                                         </div>
                                         <!-- /.row -->
                                     </li>
-                                    
+
                                     <li class="user-footer">
                                         <div class="pull-left">
                                             <a href="#" class="btn btn-default btn-flat">Mon compte</a>
@@ -80,10 +80,10 @@
                     </div>
                 </nav>
             </header>
-            
+
             <aside class="main-sidebar">
                 <section class="sidebar">
-                    
+
                     <div class="user-panel">
                         <div class="pull-left image">
                             <img src="/public/img/user-160x160.jpg" class="img-circle" alt="User Image">
@@ -105,30 +105,13 @@
                         </div>
                     </form>
 
-                    <ul class="sidebar-menu">
-                        <li class="header">Menu</li>
-                        <li class="active">
-                            <a href="#">
-                                <i class="fa fa-link"></i> <span>Link</span>
-                            </a>
-                        </li>
-                        <li class="treeview">
-                            <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="#">Link in level 2</a></li>
-                                <li><a href="#">Link in level 2</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    {{ menu }}
+                    
                 </section>
             </aside>
 
             <div class="content-wrapper" style="min-height: 298px;">
-                
+
                 <section class="content-header">
                     <h1>
                         Titre de la page
