@@ -18,7 +18,7 @@
         {% if currentItem.children|length > 0 %}
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-link"></i> <span>{{ currentItem.name }}</span>
+                    <i class="fa fa-circle-o"></i> <span>{{ currentItem.name }}</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
@@ -30,7 +30,7 @@
         {% else %}
             <li>
                 <a href="{{ currentItem.uri }}">
-                    {{ currentItem.name }}
+                    <i class="fa fa-circle-o"></i> <span>{{ currentItem.name }}</span>
                 </a>
             </li>
         {% endif %}

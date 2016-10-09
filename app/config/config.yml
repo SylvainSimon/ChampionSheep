@@ -1,3 +1,8 @@
+website:
+    title:                  ChampionSheep
+    name:                   <b>Champion</b>Sheep
+    abreviation:            <b>C</b>SE
+
 default_connection:
     database_driver:        pdo_mysql
     database_name:          championsheep

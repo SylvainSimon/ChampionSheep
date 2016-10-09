@@ -2,7 +2,7 @@
 
 namespace CoreBundle\TwigExtension;
 
-class ControllerFunctionExtension extends \Twig_Extension {
+class SystemFunctionExtension extends \Twig_Extension {
 
     public function getFunctions() {
         return [

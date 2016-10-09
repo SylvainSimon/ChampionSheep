@@ -7,9 +7,9 @@ use Knp\Menu\Renderer\TwigRenderer;
 use Knp\Menu\Matcher\Matcher;
 use Symfony\Component\Routing\Generator\UrlGenerator;
 
-class SidebarMenuController {
+class SidebarController {
 
-    public static function generateAction() {
+    public static function generateMenuAction() {
 
         $urlGenerator = new UrlGenerator(\RoutingHelper::getRouteCollection(), \RoutingHelper::$requestContext);
         $factory = new MenuFactory();
@@ -19,15 +19,18 @@ class SidebarMenuController {
         $menu->addChild('Accueil', ["route" => "home"]);
 
         $nodeAvecDesTrucs = $menu->addChild("AccueilAvecDesTruc", ["route" => "home"]);
-        $nodeAvecDesTrucs->addChild('Historique des rendez-vous', ["route" => "home"]);
+        $nodeAvecDesTrucs->addChild('en dessous', ["route" => "home"]);
 
         $menu->addChild('AccueilSeulEnPlus', ["route" => "home"]);
-
 
         $menu->addChild('Accueil', ["route" => "home"]);
 
         $menuRenderer = new TwigRenderer(\TwigHelper::$environnement, 'left_sidebar_menu.html.twig', new Matcher());
         echo $menuRenderer->render($menu);
+    }
+
+    public static function generateUserPanelAction() {
+        echo \TwigHelper::render("left_user_panel.html.twig");
     }
 
 }
