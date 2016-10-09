@@ -1,5 +1,5 @@
 home:
     path:     /
     defaults:  
-        _controller: DefaultController::indexAction
+        _controller: CoreBundle\Controllers\DefaultController::indexAction
     methods:  [GET]

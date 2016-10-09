@@ -40,5 +40,6 @@ return array(
     'Doctrine\\DBAL\\Migrations\\' => array($vendorDir . '/doctrine/migrations/lib/Doctrine/DBAL/Migrations'),
     'Doctrine\\Common\\Cache\\' => array($vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache'),
     'Doctrine\\Common\\' => array($vendorDir . '/doctrine/common/lib/Doctrine/Common'),
-    '' => array($baseDir . '/src', $baseDir . '/library/Common', $baseDir . '/src/CoreBundle/Controllers'),
+    'CoreBundle\\Controllers\\' => array($baseDir . '/src/CoreBundle/Controllers'),
+    '' => array($baseDir . '/src', $baseDir . '/library/Common'),
 );

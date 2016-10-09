@@ -31,4 +31,5 @@ RoutingHelper::createRouter();
 
 TwigHelper::createLoader();
 TwigHelper::registerTemplates([ROOT . "/app/resources/views"]);
+TwigHelper::registerTemplates([ROOT . "/src/CoreBundle/Resources/views"]);
 TwigHelper::createEnvironnement(ROOT . "/app/cache/twig", true);

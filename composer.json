@@ -3,7 +3,8 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "": ["src", "library/Common", "src/CoreBundle/Controllers"]
+            "": ["src", "library/Common"],
+            "CoreBundle\\Controllers\\": "src/CoreBundle/Controllers"
         }
     },
     "config": {
