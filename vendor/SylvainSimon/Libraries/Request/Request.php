@@ -160,6 +160,11 @@ class Request {
         return self::$request->getMethod();
     }
 
+    public static function getBaseUrl() {
+        self::fillInstance();
+        return self::$request->getBaseUrl();
+    }
+
     /**
      * Indique si l'appel a été fait par requète ajax
      * @return bool

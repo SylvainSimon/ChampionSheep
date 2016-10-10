@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Entity\Account" repository-class="Repository\AccountRepository" table="account">
+        
+        <indexes>
+            <index name="account_email_idx" columns="email"/>
+            <index name="account_nickname_idx" columns="nickname"/>
+        </indexes>
+        
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        
+        <field name="nickname" type="string" column="nickname">
+            <options>
+                <option name="default"></option>
+            </options>
+        </field>
+        
+        <field name="firstname" type="string" column="firstname">
+            <options>
+                <option name="default"></option>
+            </options>
+        </field>
+        
+        <field name="name" type="string" column="name">
+            <options>
+                <option name="default"></option>
+            </options>
+        </field>
+        
+        <field name="email" type="string" column="email">
+            <options>
+                <option name="default"></option>
+            </options>
+        </field>
+        
+        <field name="password" type="string" column="password">
+            <options>
+                <option name="default"></option>
+            </options>
+        </field>
+        
+        <one-to-many field="Tags" target-entity="Entity\Tag" fetch="LAZY" mapped-by="Tag">
+            <cascade>
+                <cascade-all/>
+            </cascade>
+        </one-to-many>
+        
+        <one-to-many field="TeamAccounts" target-entity="Entity\TeamAccount" fetch="LAZY" mapped-by="TeamAccount">
+            <cascade>
+                <cascade-all/>
+            </cascade>
+        </one-to-many>
+        
+    </entity>
+</doctrine-mapping>

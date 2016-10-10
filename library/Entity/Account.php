@@ -1,0 +1,310 @@
+<?php
+
+namespace Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Account
+ *
+ * @ORM\Table(name="account")
+ * @ORM\Entity(repositoryClass="Repository\AccountRepository")
+ */
+class Account
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="login", type="string")
+     */
+    private $login = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string")
+     */
+    private $password = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+    /**
+     * Set login
+     *
+     * @param string $login
+     *
+     * @return Account
+     */
+    public function setLogin($login)
+    {
+        $this->login = $login;
+
+        return $this;
+    }
+
+    /**
+     * Get login
+     *
+     * @return string
+     */
+    public function getLogin()
+    {
+        return $this->login;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     *
+     * @return Account
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nickname", type="string")
+     */
+    private $nickname = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="firstname", type="string")
+     */
+    private $firstname = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string")
+     */
+    private $name = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string")
+     */
+    private $email = '';
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="Entity\Tag", mappedBy="Tag", cascade={"all"})
+     */
+    private $Tags;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="Entity\TeamAccount", mappedBy="TeamAccount", cascade={"all"})
+     */
+    private $TeamAccounts;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->Tags = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->TeamAccounts = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set nickname
+     *
+     * @param string $nickname
+     *
+     * @return Account
+     */
+    public function setNickname($nickname)
+    {
+        $this->nickname = $nickname;
+
+        return $this;
+    }
+
+    /**
+     * Get nickname
+     *
+     * @return string
+     */
+    public function getNickname()
+    {
+        return $this->nickname;
+    }
+
+    /**
+     * Set firstname
+     *
+     * @param string $firstname
+     *
+     * @return Account
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    /**
+     * Get firstname
+     *
+     * @return string
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Account
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Account
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Add tag
+     *
+     * @param \Entity\Tag $tag
+     *
+     * @return Account
+     */
+    public function addTag(\Entity\Tag $tag)
+    {
+        $this->Tags[] = $tag;
+
+        return $this;
+    }
+
+    /**
+     * Remove tag
+     *
+     * @param \Entity\Tag $tag
+     */
+    public function removeTag(\Entity\Tag $tag)
+    {
+        $this->Tags->removeElement($tag);
+    }
+
+    /**
+     * Get tags
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTags()
+    {
+        return $this->Tags;
+    }
+
+    /**
+     * Add teamAccount
+     *
+     * @param \Entity\TeamAccount $teamAccount
+     *
+     * @return Account
+     */
+    public function addTeamAccount(\Entity\TeamAccount $teamAccount)
+    {
+        $this->TeamAccounts[] = $teamAccount;
+
+        return $this;
+    }
+
+    /**
+     * Remove teamAccount
+     *
+     * @param \Entity\TeamAccount $teamAccount
+     */
+    public function removeTeamAccount(\Entity\TeamAccount $teamAccount)
+    {
+        $this->TeamAccounts->removeElement($teamAccount);
+    }
+
+    /**
+     * Get teamAccounts
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTeamAccounts()
+    {
+        return $this->TeamAccounts;
+    }
+}

@@ -26,15 +26,16 @@ DoctrineHelper::setEntityCacheDir(ROOT . "/app/cache/entities");
 DoctrineHelper::setProxyCacheDir(ROOT . "/app/cache/proxies");
 DoctrineHelper::setXmlMappingPath(ROOT . "/library/Entity/Mapping");
 
-DoctrineHelper::createConnection([
+$connectionParameters = [
     "dbname" => ConfigHelper::get("database.dbname"),
     "user" => ConfigHelper::get("database.user"),
     "password" => ConfigHelper::get("database.password"),
     "host" => ConfigHelper::get("database.host"),
     "port" => ConfigHelper::get("database.port"),
     "charset" => ConfigHelper::get("database.charset")
-        ], ConfigHelper::get("database.driver"));
+];
 
+DoctrineHelper::createConnection($connectionParameters, ConfigHelper::get("database.driver"));
 DoctrineHelper::createEntityManager();
 
 //Initilialize routing
@@ -42,6 +43,7 @@ RoutingHelper::setCacheFolder(ROOT . "/app/cache/routing/");
 RoutingHelper::setRoutingFile(ROOT . "/app/config/routing.yml");
 RoutingHelper::createRouter();
 
+//Twig
 TwigHelper::createLoader();
 TwigHelper::registerTemplates([ROOT . "/app/resources/views"]);
 TwigHelper::registerTemplates([ROOT . "/src/CoreBundle/Resources/views"]);

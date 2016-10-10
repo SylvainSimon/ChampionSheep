@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Entity\Tournament" repository-class="Repository\TournamentRepository" table="tournament">
+        
+        <indexes>
+            <index name="tournament_name_idx" columns="name"/>
+            <index name="tournament_id_game_idx" columns="id_game"/>
+            <index name="tournament_id_winner_team_idx" columns="id_winner_team"/>
+        </indexes>
+        
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        
+        <field name="start" type="datetime" column="start" nullable="true"></field>
+        <field name="end" type="datetime" column="end" nullable="true"></field>
+        
+        <field name="name" type="string" column="name">
+            <options>
+                <option name="default"></option>
+            </options>
+        </field>
+        
+        <one-to-many field="TournamentTeams" target-entity="Entity\TournamentTeam" fetch="LAZY" mapped-by="TournamentTeam">
+            <cascade>
+                <cascade-all/>
+            </cascade>
+        </one-to-many>
+        
+        <many-to-one field="Game" target-entity="Entity\Game" fetch="LAZY">
+            <join-columns>
+                <join-column name="id_game" referenced-column-name="id" on-delete="CASCADE" />
+            </join-columns>
+        </many-to-one>
+        
+        <many-to-one field="WinnerTeam" target-entity="Entity\Team" fetch="LAZY">
+            <join-columns>
+                <join-column name="id_winner_team" referenced-column-name="id" on-delete="CASCADE" />
+            </join-columns>
+        </many-to-one>
+
+    </entity>
+</doctrine-mapping>

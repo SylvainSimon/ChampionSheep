@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Entity\TournamentTeam" repository-class="Repository\TournamentTeamRepository" table="tournament_team">
+        
+        <indexes>
+            <index name="tournament_team_id_tournament_idx" columns="id_tournament"/>
+            <index name="tournament_team_id_team_idx" columns="id_team"/>
+        </indexes>
+        
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        
+        <many-to-one field="Team" target-entity="Entity\Team" fetch="LAZY">
+            <join-columns>
+                <join-column name="id_team" referenced-column-name="id" on-delete="CASCADE" />
+            </join-columns>
+        </many-to-one>
+        
+        <many-to-one field="Tournament" target-entity="Entity\Tournament" fetch="LAZY">
+            <join-columns>
+                <join-column name="id_tournament" referenced-column-name="id" on-delete="CASCADE" />
+            </join-columns>
+        </many-to-one>
+        
+    </entity>
+</doctrine-mapping>

@@ -39,11 +39,12 @@ return array(
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'Knp\\Menu\\' => array($vendorDir . '/knplabs/knp-menu/src/Knp/Menu'),
     'JsonSchema\\' => array($vendorDir . '/justinrainbow/json-schema/src/JsonSchema'),
+    'Entity\\' => array($baseDir . '/library/Entity'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'Doctrine\\DBAL\\Migrations\\' => array($vendorDir . '/doctrine/migrations/lib/Doctrine/DBAL/Migrations'),
     'Doctrine\\Common\\Cache\\' => array($vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache'),
     'Doctrine\\Common\\' => array($vendorDir . '/doctrine/common/lib/Doctrine/Common'),
     'CoreBundle\\TwigExtension\\' => array($baseDir . '/src/CoreBundle/TwigExtension'),
     'CoreBundle\\Controllers\\' => array($baseDir . '/src/CoreBundle/Controllers'),
-    '' => array($baseDir . '/src', $baseDir . '/library/Common'),
+    '' => array($baseDir . '/src', $baseDir . '/library/Common', $baseDir . '/library'),
 );

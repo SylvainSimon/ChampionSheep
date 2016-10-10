@@ -3,7 +3,8 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "": ["src", "library/Common"],
+            "": ["src", "library/Common", "library"],
+            "Entity\\": "library/Entity",
             "CoreBundle\\Controllers\\": "src/CoreBundle/Controllers",
             "CoreBundle\\TwigExtension\\": "src/CoreBundle/TwigExtension"
         }

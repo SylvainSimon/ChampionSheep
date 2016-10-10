@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Entity\Team" repository-class="Repository\TeamRepository" table="team">
+        
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        
+        <field name="name" type="string" column="name">
+            <options>
+                <option name="default"></option>
+            </options>
+        </field>
+        
+        <one-to-many field="TeamAccounts" target-entity="Entity\TeamAccount" fetch="LAZY" mapped-by="TeamAccount">
+            <cascade>
+                <cascade-all/>
+            </cascade>
+        </one-to-many>
+        
+        <one-to-many field="Tournaments" target-entity="Entity\Tournament" fetch="LAZY" mapped-by="Tournament"></one-to-many>
+        
+        <one-to-many field="TournamentTeams" target-entity="Entity\TournamentTeam" fetch="LAZY" mapped-by="TournamentTeam">
+            <cascade>
+                <cascade-all/>
+            </cascade>
+        </one-to-many>
+        
+    </entity>
+</doctrine-mapping>

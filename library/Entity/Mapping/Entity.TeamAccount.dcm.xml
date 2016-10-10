@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Entity\TeamAccount" repository-class="Repository\TeamAccountRepository" table="team_account">
+        
+        <indexes>
+            <index name="team_account_id_team_idx" columns="id_team"/>
+            <index name="team_account_id_account_idx" columns="id_account"/>
+        </indexes>
+        
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        
+        <field name="start" type="datetime" column="start" nullable="true"></field>
+        <field name="end" type="datetime" column="end" nullable="true"></field>
+        
+        <many-to-one field="Team" target-entity="Entity\Team" fetch="LAZY">
+            <join-columns>
+                <join-column name="id_team" referenced-column-name="id" on-delete="CASCADE" />
+            </join-columns>
+        </many-to-one>
+        
+        <many-to-one field="Account" target-entity="Entity\Account" fetch="LAZY">
+            <join-columns>
+                <join-column name="id_account" referenced-column-name="id" on-delete="CASCADE" />
+            </join-columns>
+        </many-to-one>
+        
+    </entity>
+</doctrine-mapping>

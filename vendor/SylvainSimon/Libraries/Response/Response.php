@@ -10,21 +10,21 @@ use Sylvanus\Request\Request;
 class Response {
 
     public static function reload() {
-        $response = new RedirectResponse(\RequestHelper::url() . \RequestHelper::getServer("requestUri"));
+        $response = new RedirectResponse(Request::getBaseUrl() . Request::getServer("REQUEST_URI"));
         (ob_get_contents()) ?: ob_clean();
         $response->send();
         exit();
     }
 
     public static function redirectByUrl($url = "") {
-        $response = new RedirectResponse(($url === "") ? \RequestHelper::base() : $url);
+        $response = new RedirectResponse(($url === "") ? Request::base() : $url);
         (ob_get_contents()) ?: ob_clean();
         $response->send();
         exit();
     }
 
     public static function redirectToReferer() {
-        $refererUrl = (Request::getFromRequest("referer", RequestBag::BAG_SERVER) !== null) ? Request::getFromRequest("referer", RequestBag::BAG_SERVER) : \RequestHelper::url();
+        $refererUrl = (Request::getServer("REFERER") !== null) ? Request::getServer("REFERER") : Request::getBaseUrl();
         $response = new RedirectResponse($refererUrl);
         (ob_get_contents()) ?: ob_clean();
         $response->send();
