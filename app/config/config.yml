@@ -3,11 +3,11 @@ website:
     name:                   <b>Champion</b>Sheep
     abreviation:            <b>C</b>SE
 
-default_connection:
-    database_driver:        pdo_mysql
-    database_name:          championsheep
-    database_host:          localhost
-    database_port:          3306
-    database_user:          root
-    database_password:      
-    database_charset:       UTF8
+database:
+    driver:        pdo_mysql
+    dbname:        championsheep
+    host:          localhost
+    port:          3306
+    user:          root
+    password:      
+    charset:       UTF8

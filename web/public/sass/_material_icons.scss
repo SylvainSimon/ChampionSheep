@@ -36,7 +36,7 @@
     font-feature-settings: 'liga';
 }
 
-.material-icons.md-dark { color: rgba(255, 255, 255, 0.54); }
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
 .material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
 .material-icons.md-16 { font-size: 16px; }
 .material-icons.md-18 { font-size: 18px; }
@@ -145,7 +145,7 @@
 .material-icons.md-icon-group-work:before{content: "\e886";}
 .material-icons.md-icon-gavel:before{content: "\e90e";}
 .material-icons.md-icon-archive:before{content: "\e149";}
-
+.material-icons.md-icon-local-post-office:before{content: "\e554";}
 
 .material-icons.md-icon-spin{
     -webkit-animation: icon-spin 2s infinite linear;

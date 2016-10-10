@@ -6,6 +6,7 @@ use \Symfony\Component\HttpFoundation\Session\Session AS HttpFoundationSession;
 
 class Session {
 
+    /** @var HttpFoundationSession */
     public static $session = null;
 
     public static function init() {
@@ -24,7 +25,7 @@ class Session {
         return self::$session->set($attr, $value);
     }
 
-    public static function setFlash($bag, $value) {
+    public static function addFlash($bag, $value) {
         self::$session->getFlashBag()->add($bag, $value);
     }
 

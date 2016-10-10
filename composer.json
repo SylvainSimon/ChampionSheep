@@ -31,7 +31,6 @@
         "components/normalize.css": "3.0.*",
         "components/bootstrap": "3.3.*",
         "components/jquery": "3.1.*",
-        "components/jqueryui": "1.12.*",
-        "almasaeed2010/adminlte": "2.3.*"
+        "components/jqueryui": "1.12.*"
     }
 }

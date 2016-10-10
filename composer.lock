@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e7da8d63f97e329cb97e2afdf0c0b9a8",
-    "content-hash": "17ad35a4367c5308748766c0908de365",
+    "hash": "ec9bbceb280e966cd17960e9e7201ce7",
+    "content-hash": "ef9608863f3cb1cc7c073bbb6a56c596",
     "packages": [
         {
             "name": "SylvainSimon/Libraries",
@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SylvainSimon/Libraries.git",
-                "reference": "8df48e9c1a4206e52d2327fbadc50bf47d5ad585"
+                "reference": "5bbf009e6105e027c440d4f9159ddbdf5e4afbe6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SylvainSimon/Libraries/zipball/8df48e9c1a4206e52d2327fbadc50bf47d5ad585",
-                "reference": "8df48e9c1a4206e52d2327fbadc50bf47d5ad585",
+                "url": "https://api.github.com/repos/SylvainSimon/Libraries/zipball/5bbf009e6105e027c440d4f9159ddbdf5e4afbe6",
+                "reference": "5bbf009e6105e027c440d4f9159ddbdf5e4afbe6",
                 "shasum": ""
             },
             "require": {
@@ -72,47 +72,7 @@
                 "source": "https://github.com/SylvainSimon/Libraries/tree/master",
                 "issues": "https://github.com/SylvainSimon/Libraries/issues"
             },
-            "time": "2016-10-09 17:52:38"
-        },
-        {
-            "name": "almasaeed2010/adminlte",
-            "version": "v2.3.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/almasaeed2010/AdminLTE.git",
-                "reference": "be11566d9539370b196ac85f22a6baf9f42c87cb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/be11566d9539370b196ac85f22a6baf9f42c87cb",
-                "reference": "be11566d9539370b196ac85f22a6baf9f42c87cb",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Abdullah Almsaeed",
-                    "email": "abdullah@almsaeedstudio.com"
-                }
-            ],
-            "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 3",
-            "homepage": "http://almsaeedstudio.com/",
-            "keywords": [
-                "JS",
-                "admin",
-                "back-end",
-                "css",
-                "less",
-                "responsive",
-                "template",
-                "theme",
-                "web"
-            ],
-            "time": "2016-08-04 23:22:06"
+            "time": "2016-10-10 18:10:58"
         },
         {
             "name": "components/bootstrap",
@@ -1362,16 +1322,16 @@
         },
         {
             "name": "psr/log",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "5277094ed527a1c4477177d102fe4c53551953e0"
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/5277094ed527a1c4477177d102fe4c53551953e0",
-                "reference": "5277094ed527a1c4477177d102fe4c53551953e0",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
                 "shasum": ""
             },
             "require": {
@@ -1405,7 +1365,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-09-19 16:02:08"
+            "time": "2016-10-10 12:19:37"
         },
         {
             "name": "robloach/component-installer",

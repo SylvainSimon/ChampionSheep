@@ -26,6 +26,17 @@ DoctrineHelper::setEntityCacheDir(ROOT . "/app/cache/entities");
 DoctrineHelper::setProxyCacheDir(ROOT . "/app/cache/proxies");
 DoctrineHelper::setXmlMappingPath(ROOT . "/library/Entity/Mapping");
 
+DoctrineHelper::createConnection([
+    "dbname" => ConfigHelper::get("database.dbname"),
+    "user" => ConfigHelper::get("database.user"),
+    "password" => ConfigHelper::get("database.password"),
+    "host" => ConfigHelper::get("database.host"),
+    "port" => ConfigHelper::get("database.port"),
+    "charset" => ConfigHelper::get("database.charset")
+        ], ConfigHelper::get("database.driver"));
+
+DoctrineHelper::createEntityManager();
+
 //Initilialize routing
 RoutingHelper::setCacheFolder(ROOT . "/app/cache/routing/");
 RoutingHelper::setRoutingFile(ROOT . "/app/config/routing.yml");
@@ -38,4 +49,5 @@ TwigHelper::createEnvironnement(ROOT . "/app/cache/twig", true);
 TwigHelper::addTwigExtension(new Twig_Extension_Debug());
 TwigHelper::addTwigExtension(new \CoreBundle\TwigExtension\SystemFunctionExtension());
 TwigHelper::addTwigExtension(new \CoreBundle\TwigExtension\ConfigFunctionExtension());
+TwigHelper::addTwigExtension(new \CoreBundle\TwigExtension\AlertFunctionExtension());
 TwigHelper::addGlobal("environnement", TwigHelper::$environnement);

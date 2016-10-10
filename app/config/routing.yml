@@ -3,3 +3,21 @@ home:
     defaults:  
         _controller: CoreBundle\Controllers\DefaultController::indexAction
     methods:  [GET]
+    
+login_form:
+    path:     /login
+    defaults:  
+        _controller: CoreBundle\Controllers\LoginController::formAction
+    methods:  [GET]
+    
+login_post:
+    path:     /login
+    defaults:  
+        _controller: CoreBundle\Controllers\LoginController::loginAction
+    methods:  [POST]
+    
+logout:
+    path:     /logout
+    defaults:  
+        _controller: CoreBundle\Controllers\LoginController::logoutAction
+    methods:  [GET]

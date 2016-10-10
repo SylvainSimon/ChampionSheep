@@ -64,10 +64,11 @@
             <div class="content-wrapper" style="min-height: 298px;">
 
                 <section class="content-header">
-                    <h1>
-                        Titre de la page
-                        <small>Description de cette page</small>
+
+                    <h1>{% block pageTitle %}{% endblock %}
+                        <small>{% block pageDescription %}{% endblock %}</small>
                     </h1>
+
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
                         <li class="active">Here</li>
@@ -75,7 +76,12 @@
                 </section>
 
                 <section class="content">
-                    Je met ce que je veut ici
+                    <div class="row">
+                        {{ alert() }}
+                    </div>
+                    {% block pageBody %}
+                        Je met ce que je veut ici
+                    {% endblock %}
                 </section>
             </div>
 
@@ -84,6 +90,7 @@
 
         <script src="/public/components/jquery/jquery.min.js"></script>
         <script src="/public/components/bootstrap/js/bootstrap.min.js"></script>
-        <script src="/public/js/app.min.js"></script>
+        <script src="/public/bower-components/AdminLTE/dist/js/app.min.js"></script>
+        <script src="/public/bower-components/AdminLTE/plugins/iCheck/icheck.min.js"></script>
     </body>
 </html>

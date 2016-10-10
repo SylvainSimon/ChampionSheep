@@ -1,0 +1,32 @@
+.alert{
+    border-radius: 1px !important;
+}
+
+.alert-danger {
+    background-color: #FFD9D9 !important;
+    border-color: #B76161 !important;
+    color: #863736 !important;
+}
+
+.alert-warning{
+    background-color: #FFF5BF !important;
+    border-color: #FFC651 !important;
+    color: #8a6d3b !important;
+}
+
+.alert-info{
+    background-color: #D8F0FB !important;
+    border-color: #538DB5 !important;
+    color: #2A617B !important;
+}
+
+.alert-success {
+    background-color: #C6EFCD !important;
+    border-color: #569E55 !important;
+    color: #285029 !important;
+}
+
+.alert h4{
+    font-weight: bold !important;
+    font-size: 18px !important;
+}
