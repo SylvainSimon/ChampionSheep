@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Game
  *
  * @ORM\Table(name="game", indexes={@ORM\Index(name="game_name_idx", columns={"name"})})
- * @ORM\Entity(repositoryClass="Repository\Game")
+ * @ORM\Entity(repositoryClass="Repository\GameRepository")
  */
 class Game
 {
@@ -28,6 +28,20 @@ class Game
      */
     private $id;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="Entity\Tournament", mappedBy="Tournament")
+     */
+    private $Tournaments;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->Tournaments = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Set name
@@ -61,20 +75,6 @@ class Game
     public function getId()
     {
         return $this->id;
-    }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\OneToMany(targetEntity="Entity\Tournament", mappedBy="Tournament")
-     */
-    private $Tournaments;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->Tournaments = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

@@ -36,11 +36,27 @@ class Team
     private $TeamAccounts;
 
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="Entity\Tournament", mappedBy="Tournament")
+     */
+    private $Tournaments;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="Entity\TournamentTeam", mappedBy="TournamentTeam", cascade={"all"})
+     */
+    private $TournamentTeams;
+
+    /**
      * Constructor
      */
     public function __construct()
     {
         $this->TeamAccounts = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->Tournaments = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->TournamentTeams = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -110,13 +126,6 @@ class Team
     {
         return $this->TeamAccounts;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\OneToMany(targetEntity="Entity\Tournament", mappedBy="Tournament")
-     */
-    private $Tournaments;
-
 
     /**
      * Add tournament
@@ -151,13 +160,6 @@ class Team
     {
         return $this->Tournaments;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\OneToMany(targetEntity="Entity\TournamentTeam", mappedBy="TournamentTeam", cascade={"all"})
-     */
-    private $TournamentTeams;
-
 
     /**
      * Add tournamentTeam

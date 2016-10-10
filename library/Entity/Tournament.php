@@ -43,6 +43,13 @@ class Tournament
     private $id;
 
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="Entity\TournamentTeam", mappedBy="TournamentTeam", cascade={"all"})
+     */
+    private $TournamentTeams;
+
+    /**
      * @var \Entity\Game
      *
      * @ORM\ManyToOne(targetEntity="Entity\Game")
@@ -62,6 +69,13 @@ class Tournament
      */
     private $WinnerTeam;
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->TournamentTeams = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Set start
@@ -146,6 +160,40 @@ class Tournament
     }
 
     /**
+     * Add tournamentTeam
+     *
+     * @param \Entity\TournamentTeam $tournamentTeam
+     *
+     * @return Tournament
+     */
+    public function addTournamentTeam(\Entity\TournamentTeam $tournamentTeam)
+    {
+        $this->TournamentTeams[] = $tournamentTeam;
+
+        return $this;
+    }
+
+    /**
+     * Remove tournamentTeam
+     *
+     * @param \Entity\TournamentTeam $tournamentTeam
+     */
+    public function removeTournamentTeam(\Entity\TournamentTeam $tournamentTeam)
+    {
+        $this->TournamentTeams->removeElement($tournamentTeam);
+    }
+
+    /**
+     * Get tournamentTeams
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTournamentTeams()
+    {
+        return $this->TournamentTeams;
+    }
+
+    /**
      * Set game
      *
      * @param \Entity\Game $game
@@ -191,53 +239,5 @@ class Tournament
     public function getWinnerTeam()
     {
         return $this->WinnerTeam;
-    }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\OneToMany(targetEntity="Entity\TournamentTeam", mappedBy="TournamentTeam", cascade={"all"})
-     */
-    private $TournamentTeams;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->TournamentTeams = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add tournamentTeam
-     *
-     * @param \Entity\TournamentTeam $tournamentTeam
-     *
-     * @return Tournament
-     */
-    public function addTournamentTeam(\Entity\TournamentTeam $tournamentTeam)
-    {
-        $this->TournamentTeams[] = $tournamentTeam;
-
-        return $this;
-    }
-
-    /**
-     * Remove tournamentTeam
-     *
-     * @param \Entity\TournamentTeam $tournamentTeam
-     */
-    public function removeTournamentTeam(\Entity\TournamentTeam $tournamentTeam)
-    {
-        $this->TournamentTeams->removeElement($tournamentTeam);
-    }
-
-    /**
-     * Get tournamentTeams
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getTournamentTeams()
-    {
-        return $this->TournamentTeams;
     }
 }

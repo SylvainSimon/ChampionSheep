@@ -97,4 +97,3 @@ class GameMode
         return $this->Game;
     }
 }
-
