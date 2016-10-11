@@ -2,26 +2,25 @@
 
 namespace CoreBundle\Controllers;
 
+use CoreBundle\Forms\RegisterType;
+
 class RegisterController {
 
     public static function formAction() {
-        echo \TwigHelper::render("form_register.html.twig");
-    }
 
-    public static function registerAction() {
-
-        if (\RequestHelper::getPost("FORM_SUBMIT") !== null) {
-
-            $postLogin = \RequestHelper::getPost("login", "");
-            $postPassword = \RequestHelper::getPost("password", "");
-
-            \AlertHelper::addInfo("Login : " . $postLogin . " Password : " . $postPassword);
-            \ResponseHelper::reload();
-        }
-    }
-
-    public static function logoutAction() {
+        $defaults = [];
+        $form = \FormHelper::$formFactory->create(RegisterType::class, [], $defaults);
+        $form->handleRequest(\RequestHelper::$request);
         
+        $errors = $form->getErrors();
+
+        if ($form->isValid()) {
+
+            \ResponseHelper::redirectByRoute("home");
+        }
+
+
+        echo \TwigHelper::render("form_register.html.twig", ['form' => $form->createView()]);
     }
 
     public static function checkInputEmail() {

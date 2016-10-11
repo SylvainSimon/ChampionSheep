@@ -8,6 +8,7 @@
             "Base\\": "library/Base",
             "Repository\\": "library/Repository",
             "CoreBundle\\Controllers\\": "src/CoreBundle/Controllers",
+            "CoreBundle\\Forms\\": "src/CoreBundle/Forms",
             "CoreBundle\\TwigExtension\\": "src/CoreBundle/TwigExtension"
         }
     },
@@ -34,6 +35,12 @@
         "components/normalize.css": "3.0.*",
         "components/bootstrap": "3.3.*",
         "components/jquery": "3.1.*",
-        "components/jqueryui": "1.12.*"
+        "components/jqueryui": "1.12.*",
+        "symfony/form": "3.1.*",
+        "symfony/twig-bridge": "3.1.*" ,
+        "symfony/validator": "3.1.*" ,
+        "symfony/security": "3.1.*" ,
+        "symfony/translation": "3.1.*",
+        "symfony/options-resolver": "3.1.*" 
     }
 }

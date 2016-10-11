@@ -28,17 +28,4 @@ register_form:
     path:     /register
     defaults:  
         _controller: CoreBundle\Controllers\RegisterController::formAction
-    methods:  [GET]
-    
-register_ajax_control_email:
-    path:     /register/control/email
-    defaults:  
-        _controller: CoreBundle\Controllers\RegisterController::checkInputEmail
-    condition:    'context.getParameter("isXmlHttpRequest")'
-    methods:  [POST]
-    
-register_post:
-    path:     /register
-    defaults:  
-        _controller: CoreBundle\Controllers\RegisterController::registerAction
-    methods:  [GET]
+    methods:  [GET, POST]

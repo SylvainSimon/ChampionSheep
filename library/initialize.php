@@ -43,6 +43,9 @@ RoutingHelper::setCacheFolder(ROOT . "/app/cache/routing/");
 RoutingHelper::setRoutingFile(ROOT . "/app/config/routing.yml");
 RoutingHelper::createRouter();
 
+//TranslationHelper::createTranslator(ROOT . "/app/cache/translator");
+TranslationHelper::createTranslator(null);
+
 //Twig
 TwigHelper::createLoader();
 TwigHelper::registerTemplates([ROOT . "/app/resources/views"]);
@@ -53,3 +56,5 @@ TwigHelper::addTwigExtension(new \CoreBundle\TwigExtension\SystemFunctionExtensi
 TwigHelper::addTwigExtension(new \CoreBundle\TwigExtension\ConfigFunctionExtension());
 TwigHelper::addTwigExtension(new \CoreBundle\TwigExtension\AlertFunctionExtension());
 TwigHelper::addGlobal("environnement", TwigHelper::$environnement);
+
+FormHelper::createFactory();
