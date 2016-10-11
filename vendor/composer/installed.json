@@ -2493,18 +2493,69 @@
         ]
     },
     {
+        "name": "symfony/expression-language",
+        "version": "v3.1.5",
+        "version_normalized": "3.1.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/expression-language.git",
+            "reference": "5f75588068396b7802caccb88f806cca494e7974"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/expression-language/zipball/5f75588068396b7802caccb88f806cca494e7974",
+            "reference": "5f75588068396b7802caccb88f806cca494e7974",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.9"
+        },
+        "time": "2016-09-06 11:02:40",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\ExpressionLanguage\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony ExpressionLanguage Component",
+        "homepage": "https://symfony.com"
+    },
+    {
         "name": "SylvainSimon/Libraries",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/SylvainSimon/Libraries.git",
-            "reference": "f2385eab9280c30180d12340e22fba1a6346235a"
+            "reference": "2b0b2e577c4e81e63daad53d07c395e029b34906"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/SylvainSimon/Libraries/zipball/f2385eab9280c30180d12340e22fba1a6346235a",
-            "reference": "f2385eab9280c30180d12340e22fba1a6346235a",
+            "url": "https://api.github.com/repos/SylvainSimon/Libraries/zipball/2b0b2e577c4e81e63daad53d07c395e029b34906",
+            "reference": "2b0b2e577c4e81e63daad53d07c395e029b34906",
             "shasum": ""
         },
         "require": {
@@ -2518,6 +2569,7 @@
             "swiftmailer/swiftmailer": "5.4.*",
             "symfony/config": "3.1.*",
             "symfony/console": "3.1.*",
+            "symfony/expression-language": "3.1.*",
             "symfony/filesystem": "3.1.*",
             "symfony/finder": "3.1.*",
             "symfony/http-foundation": "3.1.*",
@@ -2529,7 +2581,7 @@
             "twig/twig": "1.26.*",
             "ua-parser/uap-php": "3.4.*"
         },
-        "time": "2016-10-10 21:49:07",
+        "time": "2016-10-11 14:12:11",
         "type": "library",
         "installation-source": "source",
         "autoload": {

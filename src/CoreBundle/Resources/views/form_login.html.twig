@@ -8,7 +8,9 @@
         
         <div class="login-box-body">
 
-            <form action="{{ urlPostLogin }}" method="POST">
+            <p class="login-box-msg">Connexion sur {{ config("website.title") }}</p>
+            
+            <form action="{{ path("login_post") }}" method="POST">
 
                 <input type="hidden" name="FORM_SUBMIT" />
 
@@ -36,9 +38,8 @@
             </form>
 
             <!--
-            <a href="">Des problèmes de connexion ?</a><br>
-            <a href="" class="text-center">S'inscrire sur {{ config("website.title") }}</a>
-            -->
+            <a href="">Des problèmes de connexion ?</a><br>            -->
+            <a href="{{ path("register_form") }}" class="text-center">S'inscrire sur {{ config("website.title") }}</a>
 
         </div>
     </div>

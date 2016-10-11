@@ -17,7 +17,7 @@ class Response {
     }
 
     public static function redirectByUrl($url = "") {
-        $response = new RedirectResponse(($url === "") ? Request::base() : $url);
+        $response = new RedirectResponse(($url === "") ? Request::getBaseUrl() : $url);
         (ob_get_contents()) ?: ob_clean();
         $response->send();
         exit();

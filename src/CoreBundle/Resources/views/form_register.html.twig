@@ -1,0 +1,66 @@
+{% extends "base.html.twig" %}
+
+{% block pageTitle %}Inscription{% endblock %}
+
+{% block pageBody %}
+
+    <div class="register-box">
+        <div class="register-box-body">
+
+            <p class="login-box-msg">Inscription sur {{ config("website.title") }}</p>
+
+            <form action="{{ path("register_post") }}" method="POST">
+
+                <div class="form-group has-error">
+                    <input type="text" class="form-control" name="nickname" value="{{ post.nickname }}" placeholder="Pseudonyme">
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    <span class="help-block">Help block with error</span>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <input type="email" class="form-control" name="email"  value="{{ post.email }}" placeholder="E-mail" onchange="checkInputEmail($(this).val())">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control" name="password" placeholder="Mot de passe">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control" name="repassword" placeholder="Confirmation du mot de passe">
+                    <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-4 pull-right">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Inscription</button>
+                    </div>
+                </div>
+            </form>
+
+            <a href="{{ path("login_form") }}" class="text-center">J'ai déjà un compte</a>
+
+        </div>
+        <!-- /.form-box -->
+    </div>
+{% endblock %}
+
+{% block customJavascript %}
+    <script type="text/javascript">
+        
+        function checkInputEmail(email) {
+            
+            $.ajax({
+                type: 'POST',
+                data: {email: email},
+                url: '{{ path("register_ajax_control_email") }}',
+                success: function (data) {
+
+                    alert(data);
+
+                }
+            });
+        }
+    </script>
+{% endblock %}

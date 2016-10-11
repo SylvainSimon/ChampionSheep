@@ -5,6 +5,8 @@
         "psr-4": {
             "": ["src", "library/Common", "library"],
             "Entity\\": "library/Entity",
+            "Base\\": "library/Base",
+            "Repository\\": "library/Repository",
             "CoreBundle\\Controllers\\": "src/CoreBundle/Controllers",
             "CoreBundle\\TwigExtension\\": "src/CoreBundle/TwigExtension"
         }

@@ -18,6 +18,7 @@ return array(
     'Symfony\\Component\\HttpFoundation\\' => array($vendorDir . '/symfony/http-foundation'),
     'Symfony\\Component\\Finder\\' => array($vendorDir . '/symfony/finder'),
     'Symfony\\Component\\Filesystem\\' => array($vendorDir . '/symfony/filesystem'),
+    'Symfony\\Component\\ExpressionLanguage\\' => array($vendorDir . '/symfony/expression-language'),
     'Symfony\\Component\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher'),
     'Symfony\\Component\\Debug\\' => array($vendorDir . '/symfony/debug'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
@@ -35,6 +36,7 @@ return array(
     'Sylvanus\\FileSystem\\' => array($vendorDir . '/SylvainSimon/Libraries/FileSystem'),
     'Sylvanus\\Encryption\\' => array($vendorDir . '/SylvainSimon/Libraries/Encryption'),
     'Sylvanus\\Config\\' => array($vendorDir . '/SylvainSimon/Libraries/Config'),
+    'Repository\\' => array($baseDir . '/library/Repository'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'Knp\\Menu\\' => array($vendorDir . '/knplabs/knp-menu/src/Knp/Menu'),
@@ -46,5 +48,6 @@ return array(
     'Doctrine\\Common\\' => array($vendorDir . '/doctrine/common/lib/Doctrine/Common'),
     'CoreBundle\\TwigExtension\\' => array($baseDir . '/src/CoreBundle/TwigExtension'),
     'CoreBundle\\Controllers\\' => array($baseDir . '/src/CoreBundle/Controllers'),
+    'Base\\' => array($baseDir . '/library/Base'),
     '' => array($baseDir . '/src', $baseDir . '/library/Common', $baseDir . '/library'),
 );
