@@ -3,7 +3,7 @@
 namespace CoreBundle\Controllers;
 
 use CoreBundle\Forms\RegisterType;
-
+use Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface();
 class RegisterController {
 
     public static function formAction() {
@@ -12,13 +12,23 @@ class RegisterController {
         $form = \FormHelper::$formFactory->create(RegisterType::class, [], $defaults);
         $form->handleRequest(\RequestHelper::$request);
         
-        $errors = $form->getErrors();
-
         if ($form->isValid()) {
 
+            $entityManager = \DoctrineHelper::getEntityManager();
+            $data = $form->getData();
+            
+            $objAccount = new \Entity\Account();
+            $objAccount->setNickname($data["nickname"]);
+            $objAccount->setEmail($data["nickname"]);
+            $objAccount->setPassword($data["password"]);
+            
+            $entityManager->persist($objAccount);
+            $entityManager->flush();
+            
+            \AlertHelper::addSuccess("Inscription réussi");
+            
             \ResponseHelper::redirectByRoute("home");
         }
-
 
         echo \TwigHelper::render("form_register.html.twig", ['form' => $form->createView()]);
     }
