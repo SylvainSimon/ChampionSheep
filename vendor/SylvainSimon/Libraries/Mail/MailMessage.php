@@ -42,9 +42,9 @@ class MailMessage {
         preg_match_all('/(src=|url\()"([^"]+\.(jpe?g|png|gif|bmp|tiff?|swf))"/Ui', $strbody, $arrMatches);
 
         foreach (array_unique($arrMatches[2]) as $url) {
-            $src = rawurldecode(str_replace(Request::base(), '', $url));
-            if (!preg_match('@^https?://@', $src) && FileSystem::exists(TL_ROOT . '/' . $src)) {
-                $cid = self::$objMessage->embed(\Swift_EmbeddedFile::fromPath(TL_ROOT . '/' . $src));
+            $src = rawurldecode(str_replace(Request::getBaseUrl(), '', $url));
+            if (!preg_match('@^https?://@', $src) && FileSystem::exists($src)) {
+                $cid = self::$objMessage->embed(\Swift_EmbeddedFile::fromPath($src));
                 $strbody = str_replace(['src="' . $url . '"', 'url("' . $url . '"'], ['src="' . $cid . '"', 'url("' . $cid . '"'], $strbody);
             }
         }

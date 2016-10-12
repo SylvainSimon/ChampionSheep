@@ -4,6 +4,7 @@ namespace CoreBundle\Controllers;
 
 use Base\Controller;
 use CoreBundle\Forms\RegisterType;
+use CoreBundle\Emails\AccountActivation;
 
 class RegisterController extends Controller {
 
@@ -27,8 +28,15 @@ class RegisterController extends Controller {
             $entityManager->persist($objAccount);
             $entityManager->flush();
 
-            \AlertHelper::addSuccess("Inscription réussi");
+            $emailAccountActivation = new AccountActivation();
+            $emailAccountActivation->generate($objAccount);
+            $emailAccountActivation->send([
+                "subject" => "Inscription sur " . \ConfigHelper::get("website.title"),
+                "recipients" => [$data["email"] => $data["nickname"]]
+            ]);
 
+            \AlertHelper::addSuccess("Votre inscription a été un succès. Vous allez recevoir un e-mail afin de confirmer qu'elle vous appartient.<br/>Merci de cliquer sur le lien à l'intérieur afin de finaliser votre inscription.");
+            
             \ResponseHelper::redirectByRoute("home");
         }
 
@@ -36,10 +44,10 @@ class RegisterController extends Controller {
     }
 
     public function confirmAction($id) {
-        
-        
 
-        echo \TwigHelper::render("@CoreBundle/pages/register.html.twig", ['form' => $form->createView()]);
+
+
+        echo \TwigHelper::render("@CoreBundle/pages/register_validate.html.twig");
     }
 
 }

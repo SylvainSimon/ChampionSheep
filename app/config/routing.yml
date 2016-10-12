@@ -24,7 +24,7 @@ register:
         _controller: CoreBundle\Controllers\RegisterController::formAction
     methods:  [GET, POST]
     
-register:
+register_activate:
     path:     /register/confirm/{id}
     defaults:  
         _controller: CoreBundle\Controllers\RegisterController::confirmAction

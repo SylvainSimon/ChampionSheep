@@ -11,3 +11,13 @@ database:
     user:          root
     password:      
     charset:       UTF8
+    
+email:
+    sender:             no-reply@championsheep.com
+    transport:
+        type:           
+        host:           localhost
+        port:           25
+        encryption:     TLS
+        login:
+        password:

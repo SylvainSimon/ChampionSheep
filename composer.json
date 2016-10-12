@@ -9,6 +9,7 @@
             "Repository\\": "library/Repository",
             "CoreBundle\\Controllers\\": "src/CoreBundle/Controllers",
             "CoreBundle\\Forms\\": "src/CoreBundle/Forms",
+            "CoreBundle\\Emails\\": "src/CoreBundle/Emails",
             "CoreBundle\\Forms\\Validators\\": "src/CoreBundle/Forms/Validators",
             "CoreBundle\\TwigExtension\\": "src/CoreBundle/TwigExtension"
         }
@@ -42,6 +43,7 @@
         "symfony/validator": "3.1.*" ,
         "symfony/security": "3.1.*" ,
         "symfony/translation": "3.1.*",
-        "symfony/options-resolver": "3.1.*" 
+        "symfony/options-resolver": "3.1.*",
+        "tijsverkoyen/css-to-inline-styles": "2.2.*"
     }
 }

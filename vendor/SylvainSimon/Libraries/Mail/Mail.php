@@ -40,7 +40,7 @@ class Mail {
         MailMessage::$objMessage->setSender($arrParameters["sender"]);
         MailMessage::$objMessage->setTo($arrParameters["recipients"]);
         MailMessage::$objMessage->setSubject($arrParameters["subject"]);
-        MailMessage::$objMessage->setBody($arrParameters["body"]);
+        MailMessage::$objMessage->setBody($arrParameters["body"], "text/html");
         
         if(isset($arrParameters["attachments"])){
             if(count($arrParameters["attachments"]) > 0){

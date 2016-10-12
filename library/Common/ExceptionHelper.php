@@ -14,6 +14,10 @@ class ExceptionHelper {
 
     public static function catchError() {
 
+        $error = error_get_last();
+        if ($error !== null) {
+            var_dump($error);
+        }
     }
 
 }
