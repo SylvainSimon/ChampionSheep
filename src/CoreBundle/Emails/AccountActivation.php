@@ -10,7 +10,8 @@ class AccountActivation extends Email {
 
     public function generate($objAccount) {
 
-        $urlAccountActivation = \RoutingHelper::generateUrl("register_activate", ["id" => $objAccount->getId()]);
+        $id = \EncryptHelper::encrypt($objAccount->getId(), true, \ConfigHelper::get("parameters.encryption.salt"));
+        $urlAccountActivation = \RoutingHelper::generateUrl("register_activate", ["id" => $id]);
 
         $strTemplate = \TwigHelper::render("@CoreBundle/emails/account_activation.html.twig", [
                     "urlActivation" => \RequestHelper::getSchemeAndHttpHost() . $urlAccountActivation

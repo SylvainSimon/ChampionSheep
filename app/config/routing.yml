@@ -25,9 +25,10 @@ register:
     methods:  [GET, POST]
     
 register_activate:
-    path:     /register/confirm/{id}
+    path:     /register/activation/{id}
     defaults:  
-        _controller: CoreBundle\Controllers\RegisterController::confirmAction
+        _controller: CoreBundle\Controllers\RegisterController::activationAction
+        id:        0
     methods:  [GET]
 
 tournaments:

@@ -16,7 +16,9 @@ class ExceptionHelper {
 
         $error = error_get_last();
         if ($error !== null) {
-            var_dump($error);
+            if ($error["type"] == 1) {
+                var_dump($error);
+            }
         }
     }
 

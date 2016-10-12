@@ -1,3 +1,7 @@
+parameters:
+    encryption:
+        salt:               championsheepsalt
+        
 website:
     title:                  ChampionSheep
     name:                   <b>Champion</b>Sheep
