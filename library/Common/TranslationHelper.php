@@ -10,9 +10,9 @@ class TranslationHelper {
     /** @var Translator */
     public static $translator = null;
     
-    public static function createTranslator($cacheFolder = null) {
+    public static function createTranslator($cacheFolder = null, $debug = false) {
 
-        $translator = new Translator("fr", new MessageSelector(), $cacheFolder);
+        $translator = new Translator("fr", new MessageSelector(), $cacheFolder, $debug);
         $translator->addLoader('yaml', new YamlFileLoader());
         $translator->addLoader('xlf', new XliffFileLoader());
         $translator->setFallbackLocales(['fr']);
@@ -28,7 +28,8 @@ class TranslationHelper {
             (!FileSystemHelper::exists($strPath . '/fr/common.fr.yml')) ? : $translator->addResource('yaml', $strPath . '/fr/common.fr.yml', 'fr', 'common');
         }
         
-        $translator->addResource('xlf', ROOT . '/src/CoreBundle/Resources/translations/validator/validators.fr.xlf', 'fr', "messages");
+        $translator->addResource('xlf', ROOT . '/src/CoreBundle/Resources/translations/validators/validators.fr.xlf', 'fr', "messages");
+        $translator->addResource('yaml', ROOT . '/src/CoreBundle/Resources/translations/validators/validators.fr.yml', 'fr', "validators");
 
         self::$translator = $translator;
         return self::$translator;

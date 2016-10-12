@@ -59,6 +59,7 @@ return array(
     'Doctrine\\Common\\Cache\\' => array($vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache'),
     'Doctrine\\Common\\' => array($vendorDir . '/doctrine/common/lib/Doctrine/Common'),
     'CoreBundle\\TwigExtension\\' => array($baseDir . '/src/CoreBundle/TwigExtension'),
+    'CoreBundle\\Forms\\Validators\\' => array($baseDir . '/src/CoreBundle/Forms/Validators'),
     'CoreBundle\\Forms\\' => array($baseDir . '/src/CoreBundle/Forms'),
     'CoreBundle\\Controllers\\' => array($baseDir . '/src/CoreBundle/Controllers'),
     'Base\\' => array($baseDir . '/library/Base'),

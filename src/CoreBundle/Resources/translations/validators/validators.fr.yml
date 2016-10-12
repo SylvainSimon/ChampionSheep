@@ -1,0 +1,4 @@
+validator:
+    register:
+        email:
+            unique:             Il y a déjà un compte enregistré avec cette e-mail.

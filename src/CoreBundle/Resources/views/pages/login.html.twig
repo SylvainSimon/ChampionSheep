@@ -1,0 +1,22 @@
+{% extends "@common/base/index.html.twig" %}
+
+{% block pageTitle %}Connexion{% endblock %}
+
+{% block pageBody %}
+    
+    <div class="login-box">
+        
+        <div class="login-box-body">
+
+            <p class="login-box-msg">Connexion sur {{ config("website.title") }}</p>
+            
+            {% include "@CoreBundle/forms/login.html.twig" %}
+
+            <!--
+            <a href="">Des problèmes de connexion ?</a><br>            -->
+            <a href="{{ path("register_form") }}" class="text-center">S'inscrire sur {{ config("website.title") }}</a>
+
+        </div>
+    </div>
+
+{% endblock %}

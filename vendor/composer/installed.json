@@ -2544,76 +2544,6 @@
         "homepage": "https://symfony.com"
     },
     {
-        "name": "SylvainSimon/Libraries",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/SylvainSimon/Libraries.git",
-            "reference": "2b0b2e577c4e81e63daad53d07c395e029b34906"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/SylvainSimon/Libraries/zipball/2b0b2e577c4e81e63daad53d07c395e029b34906",
-            "reference": "2b0b2e577c4e81e63daad53d07c395e029b34906",
-            "shasum": ""
-        },
-        "require": {
-            "doctrine/cache": "1.6.*",
-            "doctrine/common": "2.6.*",
-            "doctrine/migrations": "1.4.*",
-            "doctrine/orm": "2.5.*",
-            "justinrainbow/json-schema": "2.0.*",
-            "knplabs/knp-menu": "2.2.*",
-            "php": ">=5.4.12",
-            "swiftmailer/swiftmailer": "5.4.*",
-            "symfony/config": "3.1.*",
-            "symfony/console": "3.1.*",
-            "symfony/expression-language": "3.1.*",
-            "symfony/filesystem": "3.1.*",
-            "symfony/finder": "3.1.*",
-            "symfony/http-foundation": "3.1.*",
-            "symfony/http-kernel": "3.1.*",
-            "symfony/routing": "3.1.*",
-            "symfony/templating": "3.1.*",
-            "symfony/yaml": "3.1.*",
-            "twig/extensions": "1.4.*",
-            "twig/twig": "1.26.*",
-            "ua-parser/uap-php": "3.4.*"
-        },
-        "time": "2016-10-11 14:12:11",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "Sylvanus\\Config\\": "Config",
-                "Sylvanus\\Encryption\\": "Encryption",
-                "Sylvanus\\FileSystem\\": "FileSystem",
-                "Sylvanus\\Logger\\": "Logger",
-                "Sylvanus\\Mail\\": "Mail",
-                "Sylvanus\\ORM\\Doctrine\\": "ORM/Doctrine",
-                "Sylvanus\\Parser\\": "Parser",
-                "Sylvanus\\Request\\": "Request",
-                "Sylvanus\\Response\\": "Response",
-                "Sylvanus\\Routing\\": "Routing",
-                "Sylvanus\\Session\\": "Session",
-                "Sylvanus\\Twig\\": "Templating",
-                "Sylvanus\\Validator\\": "Validator"
-            }
-        },
-        "authors": [
-            {
-                "name": "Simon Sylvain",
-                "email": "sylvain.simon@live.fr"
-            }
-        ],
-        "description": "Sylvanus Component",
-        "support": {
-            "source": "https://github.com/SylvainSimon/Libraries/tree/master",
-            "issues": "https://github.com/SylvainSimon/Libraries/issues"
-        }
-    },
-    {
         "name": "symfony/inflector",
         "version": "v3.1.5",
         "version_normalized": "3.1.5.0",
@@ -3532,5 +3462,75 @@
         ],
         "description": "Symfony Security Component",
         "homepage": "https://symfony.com"
+    },
+    {
+        "name": "SylvainSimon/Libraries",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/SylvainSimon/Libraries.git",
+            "reference": "fb99fedabdc864e8189f6ab500f8e1649961b197"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/SylvainSimon/Libraries/zipball/fb99fedabdc864e8189f6ab500f8e1649961b197",
+            "reference": "fb99fedabdc864e8189f6ab500f8e1649961b197",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/cache": "1.6.*",
+            "doctrine/common": "2.6.*",
+            "doctrine/migrations": "1.4.*",
+            "doctrine/orm": "2.5.*",
+            "justinrainbow/json-schema": "2.0.*",
+            "knplabs/knp-menu": "2.2.*",
+            "php": ">=5.4.12",
+            "swiftmailer/swiftmailer": "5.4.*",
+            "symfony/config": "3.1.*",
+            "symfony/console": "3.1.*",
+            "symfony/expression-language": "3.1.*",
+            "symfony/filesystem": "3.1.*",
+            "symfony/finder": "3.1.*",
+            "symfony/http-foundation": "3.1.*",
+            "symfony/http-kernel": "3.1.*",
+            "symfony/routing": "3.1.*",
+            "symfony/templating": "3.1.*",
+            "symfony/yaml": "3.1.*",
+            "twig/extensions": "1.4.*",
+            "twig/twig": "1.26.*",
+            "ua-parser/uap-php": "3.4.*"
+        },
+        "time": "2016-10-12 08:49:23",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Sylvanus\\Config\\": "Config",
+                "Sylvanus\\Encryption\\": "Encryption",
+                "Sylvanus\\FileSystem\\": "FileSystem",
+                "Sylvanus\\Logger\\": "Logger",
+                "Sylvanus\\Mail\\": "Mail",
+                "Sylvanus\\ORM\\Doctrine\\": "ORM/Doctrine",
+                "Sylvanus\\Parser\\": "Parser",
+                "Sylvanus\\Request\\": "Request",
+                "Sylvanus\\Response\\": "Response",
+                "Sylvanus\\Routing\\": "Routing",
+                "Sylvanus\\Session\\": "Session",
+                "Sylvanus\\Twig\\": "Templating",
+                "Sylvanus\\Validator\\": "Validator"
+            }
+        },
+        "authors": [
+            {
+                "name": "Simon Sylvain",
+                "email": "sylvain.simon@live.fr"
+            }
+        ],
+        "description": "Sylvanus Component",
+        "support": {
+            "source": "https://github.com/SylvainSimon/Libraries/tree/master",
+            "issues": "https://github.com/SylvainSimon/Libraries/issues"
+        }
     }
 ]

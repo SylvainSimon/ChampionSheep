@@ -52,7 +52,6 @@ class Routing {
 
         $requestContext = new RequestContext();
         $requestContext->fromRequest(Request::fillInstance());
-        $requestContext->setParameter("isXmlHttpRequest", Request::isXmlHttpRequest());
         self::$requestContext = $requestContext;
         self::$urlGenerator = new UrlGenerator($collection, $requestContext);
 

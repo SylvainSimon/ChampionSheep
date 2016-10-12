@@ -48,8 +48,9 @@ TranslationHelper::createTranslator(null);
 
 //Twig
 TwigHelper::createLoader();
-TwigHelper::registerTemplates([ROOT . "/app/resources/views"]);
-TwigHelper::registerTemplates([ROOT . "/src/CoreBundle/Resources/views"]);
+TwigHelper::addPath(ROOT . "/app/resources/views", "common");
+TwigHelper::addPath(ROOT . "/src/CoreBundle/Resources/views", "CoreBundle");
+
 TwigHelper::createEnvironnement(ROOT . "/app/cache/twig", true);
 TwigHelper::addTwigExtension(new Twig_Extension_Debug());
 TwigHelper::addTwigExtension(new \CoreBundle\TwigExtension\SystemFunctionExtension());

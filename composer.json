@@ -9,6 +9,7 @@
             "Repository\\": "library/Repository",
             "CoreBundle\\Controllers\\": "src/CoreBundle/Controllers",
             "CoreBundle\\Forms\\": "src/CoreBundle/Forms",
+            "CoreBundle\\Forms\\Validators\\": "src/CoreBundle/Forms/Validators",
             "CoreBundle\\TwigExtension\\": "src/CoreBundle/TwigExtension"
         }
     },

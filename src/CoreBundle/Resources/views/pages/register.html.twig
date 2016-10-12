@@ -1,0 +1,17 @@
+{% extends "@common/base/index.html.twig" %}
+
+{% block pageTitle %}Inscription{% endblock %}
+
+{% block pageBody %}
+
+    <div class="register-box">
+        <div class="register-box-body">
+
+            <p class="login-box-msg">Inscription sur {{ config("website.title") }}</p>
+
+            {% include "@CoreBundle/forms/register.html.twig" %}
+
+            <a href="{{ path("login_form") }}" class="text-center">J'ai déjà un compte</a>
+        </div>
+    </div>
+{% endblock %}

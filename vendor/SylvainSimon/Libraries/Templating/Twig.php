@@ -8,15 +8,15 @@ class Twig {
     public static $environnement = null;
 
     public static function createLoader() {
-        self::$loader = new \Twig_Loader_Chain();
+        self::$loader = new \Twig_Loader_Filesystem();
     }
 
-    /**
-     * Add an array of template folder paths to the loader
-     * @param array $arrPath
-     */
-    public static function registerTemplates(array $arrPath) {
-        self::$loader->addLoader(new \Twig_Loader_Filesystem($arrPath));
+    public static function setPaths($arrPath) {
+        self::$loader->setPaths($arrPath);
+    }
+
+    public static function addPath($src, $name = null) {
+        self::$loader->addPath($src, $name);
     }
 
     public static function createEnvironnement($cachePath, $debug = false) {
@@ -26,17 +26,16 @@ class Twig {
             'debug' => $debug,
             'autoescape' => false]
         );
-        
     }
-    
+
     public static function addGlobal($name, $value) {
-        self::$environnement->addGlobal($name, $value);  
+        self::$environnement->addGlobal($name, $value);
     }
-    
+
     public static function addTwigExtension($instance) {
-        self::$environnement->addExtension($instance);  
+        self::$environnement->addExtension($instance);
     }
-    
+
     public static function addTwigExtensions() {
         self::$environnement->addExtension(new \Twig_Extensions_Extension_Text());
         self::$environnement->addExtension(new \Twig_Extensions_Extension_I18n());
@@ -44,7 +43,7 @@ class Twig {
         self::$environnement->addExtension(new \Twig_Extensions_Extension_Array());
         self::$environnement->addExtension(new \Twig_Extensions_Extension_Date());
     }
-    
+
     public static function addTwigTranslationExtension($translator) {
         self::$environnement->addExtension(new \Symfony\Bridge\Twig\Extension\TranslationExtension($translator));
     }

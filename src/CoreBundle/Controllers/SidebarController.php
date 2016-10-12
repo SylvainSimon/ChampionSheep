@@ -25,12 +25,12 @@ class SidebarController {
 
         $menu->addChild('Accueil', ["route" => "home"]);
 
-        $menuRenderer = new TwigRenderer(\TwigHelper::$environnement, 'left_sidebar_menu.html.twig', new Matcher());
+        $menuRenderer = new TwigRenderer(\TwigHelper::$environnement, "@CoreBundle/left_sidebar_menu.html.twig", new Matcher());
         echo $menuRenderer->render($menu);
     }
 
     public static function generateUserPanelAction() {
-        echo \TwigHelper::render("left_user_panel.html.twig");
+        echo \TwigHelper::render("@CoreBundle/left_user_panel.html.twig");
     }
 
 }

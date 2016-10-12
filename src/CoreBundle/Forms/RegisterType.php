@@ -33,7 +33,10 @@ class RegisterType extends AbstractType {
                     'attr' => [
                         "placeholder" => "example@gmail.com"
                     ],
-                    'constraints' => new Constraints\Email
+                    'constraints' => [
+                        new Constraints\Email,
+                        new Constraints\Callback(['CoreBundle\Forms\Validators\AccountEmail', 'validateUnique',])
+                    ]
                 ])
                 ->add('password', RepeatedType::class, [
                     'type' => PasswordType::class,
@@ -41,17 +44,16 @@ class RegisterType extends AbstractType {
                         'class' => 'password-field'
                     ],
                     'first_options' => [
-                        'label' => 'Mot de passe'
+                        'label' => 'Mot de passe',
                     ],
                     'second_options' => [
-                        'label' => 'Répéter le mot de passe'
+                        'label' => 'Répéter le mot de passe',
                     ],
                     'constraints' => [
                         new Constraints\NotBlank(),
                         new Constraints\Length(["min" => 4])
                     ]
                 ])
-                ->setMethod("POST")
                 ->setAction(\RoutingHelper::generateUrl("register_form"))
                 ->getForm();
     }

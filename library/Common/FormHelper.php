@@ -37,7 +37,7 @@ class FormHelper {
         TwigHelper::addTwigExtension(new TranslationExtension(TranslationHelper::$translator));
         
         //Rajout dans twig
-        $defaultFormTheme = 'bootstrap_3_layout.html.twig';
+        $defaultFormTheme = "@common/forms/bootstrap_3_layout.html.twig";
         $formEngine = new TwigRendererEngine([$defaultFormTheme]);
         $formEngine->setEnvironment(Twig::$environnement);
         
