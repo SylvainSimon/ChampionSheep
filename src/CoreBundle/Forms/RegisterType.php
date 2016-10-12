@@ -49,7 +49,7 @@ class RegisterType extends AbstractType {
                         new Constraints\Length(["min" => 4])
                     ]
                 ])
-                ->setAction(\RoutingHelper::generateUrl("register_form"))
+                ->setAction(\RoutingHelper::generateUrl("register"))
                 ->getForm();
     }
 

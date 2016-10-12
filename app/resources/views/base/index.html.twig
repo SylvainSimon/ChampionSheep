@@ -62,14 +62,12 @@
                         <small>{% block pageDescription %}{% endblock %}</small>
                     </h1>
 
-                    <!--
-                    <ol class="breadcrumb">
-                    </ol>
-                    -->
-
                 </section>
 
                 <section class="content">
+                    
+                    {{ checkActivation() }}
+                    
                     <div class="row">
                         {{ alert() }}
                     </div>

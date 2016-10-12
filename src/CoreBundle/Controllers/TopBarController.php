@@ -2,9 +2,13 @@
 
 namespace CoreBundle\Controllers;
 
-class TopBarController {
+use Base\Controller;
 
-    public static function userPanelAction() {
+class TopBarController extends Controller {
+
+    protected $connectedController = false;
+
+    public function userPanelAction() {
 
         if (IS_CONNECTED) {
             echo \TwigHelper::render("@CoreBundle/top_bar_user_panel.html.twig");

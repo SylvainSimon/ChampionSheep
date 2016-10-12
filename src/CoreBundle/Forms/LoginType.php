@@ -34,7 +34,7 @@ class LoginType extends AbstractType {
             ]
         ]);
         
-        $builder->setAction(\RoutingHelper::generateUrl("login_form"));
+        $builder->setAction(\RoutingHelper::generateUrl("login"));
         $builder->getForm();
     }
 

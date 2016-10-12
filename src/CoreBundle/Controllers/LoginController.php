@@ -2,11 +2,14 @@
 
 namespace CoreBundle\Controllers;
 
+use Base\Controller;
 use CoreBundle\Forms\LoginType;
 
-class LoginController {
+class LoginController extends Controller {
 
-    public static function formAction() {
+    protected $connectedController = false;
+
+    public function formAction() {
 
         $form = \FormHelper::$formFactory->create(LoginType::class, []);
         $form->handleRequest(\RequestHelper::$request);
@@ -20,8 +23,9 @@ class LoginController {
             ]);
 
             if ($objAccount !== null) {
-                
+
                 \SessionHelper::set("isConnected", true);
+                \SessionHelper::set("isActivate", $objAccount->getActivation());
                 \SessionHelper::set("idAccount", $objAccount->getId());
 
                 \ResponseHelper::redirectByRoute("home");
@@ -33,7 +37,7 @@ class LoginController {
         echo \TwigHelper::render("@CoreBundle/pages/login.html.twig", ['form' => $form->createView()]);
     }
 
-    public static function loginAction() {
+    public function loginAction() {
 
         if (\RequestHelper::getPost("FORM_SUBMIT") !== null) {
 
@@ -45,7 +49,7 @@ class LoginController {
         }
     }
 
-    public static function logoutAction() {
+    public function logoutAction() {
         \SessionHelper::clear();
         \ResponseHelper::redirectByRoute("home");
     }

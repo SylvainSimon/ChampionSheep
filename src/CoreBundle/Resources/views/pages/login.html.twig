@@ -7,13 +7,11 @@
     <div class="login-box">
         
         <div class="login-box-body">
-
             
             {% include "@CoreBundle/forms/login.html.twig" %}
 
-            <!--
-            <a href="">Des problèmes de connexion ?</a><br>            -->
-            <a href="{{ path("register_form") }}" class="text-center">S'inscrire sur {{ config("website.title") }}</a>
+            <a href="">Des problèmes de connexion ?</a><br/>
+            <a href="{{ path("register") }}" class="text-center">S'inscrire sur {{ config("website.title") }}</a>
 
         </div>
     </div>

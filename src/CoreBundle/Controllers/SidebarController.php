@@ -2,13 +2,16 @@
 
 namespace CoreBundle\Controllers;
 
+use Base\Controller;
 use Knp\Menu\MenuFactory;
 use Knp\Menu\Renderer\TwigRenderer;
 use Knp\Menu\Matcher\Matcher;
 use Symfony\Component\Routing\Generator\UrlGenerator;
 use Knp\Menu\Util\MenuManipulator;
 
-class SidebarController {
+class SidebarController extends Controller {
+
+    protected $connectedController = false;
 
     public function menuAction() {
         $menuRenderer = new TwigRenderer(\TwigHelper::$environnement, "@CoreBundle/left_sidebar_menu.html.twig", new Matcher());
@@ -16,12 +19,12 @@ class SidebarController {
     }
 
     public function breadcrumpAction() {
-        
+
         //TODO
         $menu = self::generate();
         $menuManipulator = new MenuManipulator();
         $stringBread = $menuManipulator->getPathAsString($menu->isCurrent($name));
-        
+
         echo $stringBread;
     }
 

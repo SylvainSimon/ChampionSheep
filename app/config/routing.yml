@@ -5,7 +5,7 @@ home:
     methods:  [GET]
     
 ##Connection
-login_form:
+login:
     path:     /login
     defaults:  
         _controller: CoreBundle\Controllers\LoginController::formAction
@@ -18,12 +18,18 @@ logout:
     methods:  [GET]
     
 ##Register
-register_form:
+register:
     path:     /register
     defaults:  
         _controller: CoreBundle\Controllers\RegisterController::formAction
     methods:  [GET, POST]
     
+register:
+    path:     /register/confirm/{id}
+    defaults:  
+        _controller: CoreBundle\Controllers\RegisterController::confirmAction
+    methods:  [GET]
+
 tournaments:
     resource: "src/TournamentBundle/Resources/config/routing.yml"
     

@@ -41,6 +41,12 @@
             </options>
         </field>
         
+        <field name="activation" type="integer" column="activation">
+            <options>
+                <option name="default">0</option>
+            </options>
+        </field>
+        
         <one-to-many field="Tags" target-entity="Entity\Tag" fetch="LAZY" mapped-by="Tag">
             <cascade>
                 <cascade-all/>

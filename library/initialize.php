@@ -12,7 +12,9 @@ ExceptionHelper::registerHandlers();
 
 SessionHelper::init();
 $isConnected = SessionHelper::get("isConnected", false);
+$isActivate = SessionHelper::get("isActivate");
 define("IS_CONNECTED", $isConnected);
+define("IS_ACTIVATE", $isActivate);
 
 //Initilialize logger
 LogHelper::setLogPath(ROOT . "/app/log/");
@@ -60,5 +62,6 @@ TwigHelper::addTwigExtension(new \CoreBundle\TwigExtension\ConfigFunctionExtensi
 TwigHelper::addTwigExtension(new \CoreBundle\TwigExtension\AlertFunctionExtension());
 TwigHelper::addGlobal("environnement", TwigHelper::$environnement);
 TwigHelper::addGlobal("isConnected", $isConnected);
+TwigHelper::addGlobal("isActivate", $isActivate);
 
 FormHelper::createFactory();

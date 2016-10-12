@@ -276,35 +276,4 @@ class Account
     {
         return $this->TeamAccounts;
     }
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="activation", type="integer")
-     */
-    private $activation = '0';
-
-
-    /**
-     * Set activation
-     *
-     * @param integer $activation
-     *
-     * @return Account
-     */
-    public function setActivation($activation)
-    {
-        $this->activation = $activation;
-
-        return $this;
-    }
-
-    /**
-     * Get activation
-     *
-     * @return integer
-     */
-    public function getActivation()
-    {
-        return $this->activation;
-    }
 }

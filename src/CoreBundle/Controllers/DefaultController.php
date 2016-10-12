@@ -2,7 +2,11 @@
 
 namespace CoreBundle\Controllers;
 
-class DefaultController {
+use Base\Controller;
+
+class DefaultController extends Controller {
+
+    protected $connectedController = false;
 
     public function indexAction() {
 
