@@ -6,10 +6,9 @@ use CoreBundle\Forms\RegisterType;
 
 class RegisterController {
 
-    public static function formAction() {
+    public function formAction() {
 
-        $defaults = [];
-        $form = \FormHelper::$formFactory->create(RegisterType::class, [], $defaults);
+        $form = \FormHelper::$formFactory->create(RegisterType::class, []);
         $form->handleRequest(\RequestHelper::$request);
         
         if ($form->isValid()) {

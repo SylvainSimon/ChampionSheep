@@ -34,7 +34,7 @@
                     </a>
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">
-                            {{ controller('CoreBundle\\Controllers\\TopBarController', 'generateUserPanelAction', {}) }}
+                            {{ controller('CoreBundle\\Controllers\\TopBarController', 'userPanelAction', {}) }}
                         </ul>
                     </div>
                 </nav>
@@ -42,21 +42,14 @@
 
             <aside class="main-sidebar">
                 <section class="sidebar">
-
-                    {{ controller('CoreBundle\\Controllers\\SidebarController', 'generateUserPanelAction', {}) }}
-
-                    <form action="#" method="get" class="sidebar-form">
-                        <div class="input-group">
-                            <input type="text" name="q" class="form-control" placeholder="Une équipe, un tournoi..">
-                            <span class="input-group-btn">
-                                <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
+                    <a href="{{ path("home") }}">
+                        <div class="user-panel">
+                            <div class="image">
+                                <img src="/public/img/logo.png" alt="User Image">
+                            </div>
                         </div>
-                    </form>
-
-                    {{ controller('CoreBundle\\Controllers\\SidebarController', 'generateMenuAction', {}) }}
+                    </a>
+                    {{ controller('CoreBundle\\Controllers\\SidebarController', 'menuAction', {}) }}
 
                 </section>
             </aside>
@@ -69,10 +62,11 @@
                         <small>{% block pageDescription %}{% endblock %}</small>
                     </h1>
 
+                    <!--
                     <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-                        <li class="active">Here</li>
                     </ol>
+                    -->
+
                 </section>
 
                 <section class="content">
@@ -80,7 +74,6 @@
                         {{ alert() }}
                     </div>
                     {% block pageBody %}
-                        Je met ce que je veut ici
                     {% endblock %}
                 </section>
             </div>

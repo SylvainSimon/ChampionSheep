@@ -1,7 +1,5 @@
 <?php
 
-// src/OC/PlatformBundle/Form/AdvertType.php
-
 namespace CoreBundle\Forms;
 
 use Symfony\Component\Form\AbstractType;
@@ -40,9 +38,6 @@ class RegisterType extends AbstractType {
                 ])
                 ->add('password', RepeatedType::class, [
                     'type' => PasswordType::class,
-                    'attr' => [
-                        'class' => 'password-field'
-                    ],
                     'first_options' => [
                         'label' => 'Mot de passe',
                     ],

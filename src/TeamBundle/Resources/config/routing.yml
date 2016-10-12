@@ -1,0 +1,5 @@
+teams_list:
+    path:     /teams/list
+    defaults:  
+        _controller: TeamBundle\Controllers\TeamListController::indexAction
+    methods:  [GET]

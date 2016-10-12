@@ -6,31 +6,36 @@ use Knp\Menu\MenuFactory;
 use Knp\Menu\Renderer\TwigRenderer;
 use Knp\Menu\Matcher\Matcher;
 use Symfony\Component\Routing\Generator\UrlGenerator;
+use Knp\Menu\Util\MenuManipulator;
 
 class SidebarController {
 
-    public static function generateMenuAction() {
+    public function menuAction() {
+        $menuRenderer = new TwigRenderer(\TwigHelper::$environnement, "@CoreBundle/left_sidebar_menu.html.twig", new Matcher());
+        echo $menuRenderer->render(self::generate());
+    }
+
+    public function breadcrumpAction() {
+        
+        //TODO
+        $menu = self::generate();
+        $menuManipulator = new MenuManipulator();
+        $stringBread = $menuManipulator->getPathAsString($menu->isCurrent($name));
+        
+        echo $stringBread;
+    }
+
+    public function generate() {
 
         $urlGenerator = new UrlGenerator(\RoutingHelper::getRouteCollection(), \RoutingHelper::$requestContext);
         $factory = new MenuFactory();
         $factory->addExtension(new \Knp\Menu\Integration\Symfony\RoutingExtension($urlGenerator));
 
-        $menu = $factory->createItem("root");
-        $menu->addChild('Accueil', ["route" => "home"]);
+        $menu = $factory->createItem("Accueil");
+        $menu->addChild('Tournois', ["route" => "tournaments_list"])->setAttribute('icon', 'fa fa-calendar');
+        $menu->addChild('Équipes', ["route" => "teams_list"])->setAttribute('icon', 'fa fa-users');
 
-        $nodeAvecDesTrucs = $menu->addChild("AccueilAvecDesTruc", ["route" => "home"]);
-        $nodeAvecDesTrucs->addChild('en dessous', ["route" => "home"]);
-
-        $menu->addChild('AccueilSeulEnPlus', ["route" => "home"]);
-
-        $menu->addChild('Accueil', ["route" => "home"]);
-
-        $menuRenderer = new TwigRenderer(\TwigHelper::$environnement, "@CoreBundle/left_sidebar_menu.html.twig", new Matcher());
-        echo $menuRenderer->render($menu);
-    }
-
-    public static function generateUserPanelAction() {
-        echo \TwigHelper::render("@CoreBundle/left_user_panel.html.twig");
+        return $menu;
     }
 
 }

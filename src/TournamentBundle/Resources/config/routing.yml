@@ -1,0 +1,5 @@
+tournaments_list:
+    path:     /tournaments/list
+    defaults:  
+        _controller: TournamentBundle\Controllers\TournamentListController::indexAction
+    methods:  [GET]

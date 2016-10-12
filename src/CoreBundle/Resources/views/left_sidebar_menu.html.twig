@@ -10,15 +10,15 @@
 
 
 {% macro menu_links(item) %}
-    
+
     {% import _self as macros %}
 
     {% for currentItem in item %}
-        
+
         {% if currentItem.children|length > 0 %}
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-circle-o"></i> <span>{{ currentItem.name }}</span>
+                    <i class="fa {{ item.attributes.icon }}"></i> <span>{{ currentItem.name }}</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
@@ -27,14 +27,14 @@
                     {{ macros.menu_links(currentItem.children) }}
                 </ul>
             </li>
-        {% else %}
+        {% else %}     
             <li>
                 <a href="{{ currentItem.uri }}">
-                    <i class="fa fa-circle-o"></i> <span>{{ currentItem.name }}</span>
+                    <i class="fa {{ currentItem.attributes.icon }}"></i> <span>{{ currentItem.name }}</span>
                 </a>
             </li>
         {% endif %}
-        
+
     {% endfor %}
-    
+
 {% endmacro %}

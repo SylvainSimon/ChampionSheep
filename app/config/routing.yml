@@ -9,13 +9,7 @@ login_form:
     path:     /login
     defaults:  
         _controller: CoreBundle\Controllers\LoginController::formAction
-    methods:  [GET]
-    
-login_post:
-    path:     /login
-    defaults:  
-        _controller: CoreBundle\Controllers\LoginController::loginAction
-    methods:  [POST]
+    methods:  [GET, POST]
     
 logout:
     path:     /logout
@@ -29,3 +23,9 @@ register_form:
     defaults:  
         _controller: CoreBundle\Controllers\RegisterController::formAction
     methods:  [GET, POST]
+    
+tournaments:
+    resource: "src/TournamentBundle/Resources/config/routing.yml"
+    
+teams:
+    resource: "src/TeamBundle/Resources/config/routing.yml"

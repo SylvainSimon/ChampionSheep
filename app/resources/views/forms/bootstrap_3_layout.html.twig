@@ -6,7 +6,23 @@
     {% if type is not defined or type not in ['file', 'hidden'] %}
         {%- set attr = attr|merge({class: (attr.class|default('') ~ ' form-control')|trim}) -%}
     {% endif %}
+    
+    {% if attr.iconLeft is defined or attr.iconRight is defined %}
+        <div class="input-group">
+    {% endif %}
+    
+    {% if attr.iconLeft is defined %}
+        <span class="input-group-addon"><i class="{{ attr.iconLeft }}"></i></span>
+    {% endif %}
     {{- parent() -}}
+    {% if attr.iconRight is defined %}
+        <span class="input-group-addon"><i class="{{ attr.iconRight }}"></i></span>
+    {% endif %}
+    
+    {% if attr.iconLeft is defined or attr.iconRight is defined %}
+        </div>
+    {% endif %}
+    
 {%- endblock form_widget_simple %}
 
 {% block textarea_widget -%}
