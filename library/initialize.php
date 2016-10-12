@@ -11,6 +11,8 @@ error_reporting(E_ERROR | E_PARSE);
 ExceptionHelper::registerHandlers();
 
 SessionHelper::init();
+$isConnected = SessionHelper::get("isConnected", false);
+define("IS_CONNECTED", $isConnected);
 
 //Initilialize logger
 LogHelper::setLogPath(ROOT . "/app/log/");
@@ -57,5 +59,6 @@ TwigHelper::addTwigExtension(new \CoreBundle\TwigExtension\SystemFunctionExtensi
 TwigHelper::addTwigExtension(new \CoreBundle\TwigExtension\ConfigFunctionExtension());
 TwigHelper::addTwigExtension(new \CoreBundle\TwigExtension\AlertFunctionExtension());
 TwigHelper::addGlobal("environnement", TwigHelper::$environnement);
+TwigHelper::addGlobal("isConnected", $isConnected);
 
 FormHelper::createFactory();

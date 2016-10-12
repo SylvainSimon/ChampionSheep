@@ -18,13 +18,16 @@ class LoginController {
                 "email" => $data["email"],
                 "password" => sha1($data["password"])
             ]);
-            
-            if($objAccount !== null){
-                \AlertHelper::addSuccess("J'ai trouvé un compte");
-            }else{
-                \AlertHelper::addError("Pas bon les identifiants");
-            }
 
+            if ($objAccount !== null) {
+                
+                \SessionHelper::set("isConnected", true);
+                \SessionHelper::set("idAccount", $objAccount->getId());
+
+                \ResponseHelper::redirectByRoute("home");
+            } else {
+                \AlertHelper::addError("Les identifiants que vous avez renseignés sont inconnus.");
+            }
         }
 
         echo \TwigHelper::render("@CoreBundle/pages/login.html.twig", ['form' => $form->createView()]);
@@ -43,7 +46,8 @@ class LoginController {
     }
 
     public static function logoutAction() {
-        
+        \SessionHelper::clear();
+        \ResponseHelper::redirectByRoute("home");
     }
 
 }

@@ -3470,12 +3470,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/SylvainSimon/Libraries.git",
-            "reference": "fb99fedabdc864e8189f6ab500f8e1649961b197"
+            "reference": "30d3d44277aaee1f30d05a79e6827c17a9151a94"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/SylvainSimon/Libraries/zipball/fb99fedabdc864e8189f6ab500f8e1649961b197",
-            "reference": "fb99fedabdc864e8189f6ab500f8e1649961b197",
+            "url": "https://api.github.com/repos/SylvainSimon/Libraries/zipball/30d3d44277aaee1f30d05a79e6827c17a9151a94",
+            "reference": "30d3d44277aaee1f30d05a79e6827c17a9151a94",
             "shasum": ""
         },
         "require": {
@@ -3501,7 +3501,7 @@
             "twig/twig": "1.26.*",
             "ua-parser/uap-php": "3.4.*"
         },
-        "time": "2016-10-12 08:49:23",
+        "time": "2016-10-12 13:02:52",
         "type": "library",
         "installation-source": "source",
         "autoload": {

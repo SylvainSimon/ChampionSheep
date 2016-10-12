@@ -5,6 +5,12 @@ namespace CoreBundle\Controllers;
 class TopBarController {
 
     public static function userPanelAction() {
-        echo \TwigHelper::render("@CoreBundle/top_user_panel.html.twig");
+
+        if (IS_CONNECTED) {
+            echo \TwigHelper::render("@CoreBundle/top_bar_user_panel.html.twig");
+        } else {
+            echo \TwigHelper::render("@CoreBundle/top_bar_links.html.twig");
+        }
     }
+
 }

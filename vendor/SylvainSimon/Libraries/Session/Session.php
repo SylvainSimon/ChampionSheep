@@ -17,12 +17,21 @@ class Session {
         self::$session = $session;
     }
 
-    public static function get($attr) {
-        return self::$session->get($attr);
+    public static function get($attr, $default = null) {
+        
+        if (self::$session->has($attr)) {
+            return self::$session->get($attr);
+        } else {
+            return $default;
+        }
     }
-
+    
     public static function set($attr, $value) {
         return self::$session->set($attr, $value);
+    }
+    
+    public static function clear() {
+        return self::$session->clear();
     }
 
     public static function addFlash($bag, $value) {
