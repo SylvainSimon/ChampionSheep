@@ -21,6 +21,7 @@ class RegisterController extends Controller {
             $data = $form->getData();
 
             $objAccount = new \Entity\Account();
+            $objAccount->setCreatedAt(new \DateTime('now'));
             $objAccount->setNickname($data["nickname"]);
             $objAccount->setEmail($data["email"]);
             $objAccount->setPassword(sha1($data["password"]));

@@ -11,6 +11,8 @@
             <generator strategy="IDENTITY"/>
         </id>
         
+        <field name="createdAt" type="datetime" column="created_at" nullable="true"></field>
+        
         <field name="nickname" type="string" column="nickname">
             <options>
                 <option name="default"></option>
